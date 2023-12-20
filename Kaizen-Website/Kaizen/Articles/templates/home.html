@@ -3,10 +3,10 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width", initial-scale="2.0">
-        <link rel="stylesheet" href="/static/css/Home.css">
-</head>
+        <link rel="stylesheet" href="/static/Home.css">
+        <title>Kaizen-App</title>
+    </head>
 <body>
-
     <div class="nav">
         <div class="column-left">
             <h1 style="text-align: center;">Welcome To Kaizen Website</h1>
@@ -14,10 +14,9 @@
             Your Recommended Article & Especially Your Recommended Author/s.</p>
         </div>
     </div>
-
-    
-<div class="container">
-    <input type="text" style="align-items: center;" placeholder="Search/Choose Faculty Member/Article Topic Keyword" list="input">
-    <button type="button" button style="margin: 50px;" onkeyup="myFunction()" style="align-items: center" autocomplete="off";>Search</button>
+    <form action="search/" method="GET">
+    <input type="text" name="query" placeholder="Search...">
+    <button type="submit">Search</button>
+</form>
 </body>
 </html>
