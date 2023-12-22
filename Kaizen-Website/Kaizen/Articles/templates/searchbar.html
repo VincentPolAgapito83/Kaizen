@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    <center>
+    {%if searched %}
+        <h1> You Search For{{results}} </h1>
+    {% else %}
+        <h1>No Results Found</h1>
+    {% endif %}
+    </center>
+{% endblock %}

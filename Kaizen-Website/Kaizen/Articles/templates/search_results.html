@@ -1,9 +1,10 @@
-<h1>Search Results</h1>
-
-<ul>
-    {% for Articles in object_list %}
-    <li>
-        {{Articles.title}}, {{Articles.authors}}
-    </li>
-    {% endfor %}
-</ul>
+<!DOCTYPE html>
+<html>
+    <body>
+        <div class="search-container">
+            <link rel="stylesheet" type="text/css" href="static/search.css">
+            <input type="text" name="query" placeholder="Search..." class="search-input">
+            <button type="submit" class="search-button">Search</button>
+        </div>
+    </body>
+</html>
