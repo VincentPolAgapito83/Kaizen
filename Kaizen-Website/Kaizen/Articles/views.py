@@ -7,6 +7,7 @@ from django.contrib import messages
 from django.views.generic import TemplateView, ListView
 from .models import Articles
 from django.db.models import Q
+import scholarly 
 
 def user_profile(request):
     return render(request, 'members/profile.html')
