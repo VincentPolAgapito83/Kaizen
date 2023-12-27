@@ -8,6 +8,9 @@ from django.views.generic import TemplateView, ListView
 from .models import Articles
 from django.db.models import Q
 
+def user_profile(request):
+    return render(request, 'members/profile.html')
+
 def search_bar(request):
     if request.method == "POST":
         results = request.POST['results']
