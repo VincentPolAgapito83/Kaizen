@@ -1,12 +1,17 @@
 from django.db.models.query import QuerySet
 from django.http import HttpRequest, HttpResponse
 from django.shortcuts import render
+from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.views.generic import TemplateView, ListView
 from .models import Articles
 from django.db.models import Q
+import scholarly
+
+def user_profile(request):
+    return render(request, 'members/profile.html')
 
 def search_bar(request):
     if request.method == "POST":
@@ -55,4 +60,5 @@ class SearchResultsView(ListView):
         return Articles.objects.filter(
             Q(authors__icontains="") | Q(title__icontains="")
         )
+
 
