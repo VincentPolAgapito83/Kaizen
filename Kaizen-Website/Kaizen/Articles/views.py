@@ -59,6 +59,9 @@ def user_login(request):
 class HomePageView(TemplateView):
     template_name = 'home.html'
 
+class AboutPageView(TemplateView):
+    template_name = 'about.html'
+
 class SearchResultsView(ListView):
     model = Articles
     template_name = 'search_results.html'
