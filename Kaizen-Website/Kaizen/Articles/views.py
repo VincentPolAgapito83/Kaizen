@@ -1,16 +1,16 @@
 from django.db.models.query import QuerySet
 from django.http import HttpRequest, HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.views.generic import TemplateView, ListView
 from .models import Articles
 from django.db.models import Q
-import scholarly 
 
 def user_profile(request):
     return render(request, 'members/profile.html')
+
 
 def search_bar(request):
     if request.method == "POST":
@@ -19,6 +19,11 @@ def search_bar(request):
                        {'results':results}) 
     else:
         return render(request, 'searchbar.html', {})
+    
+def user_logout(request):
+    logout(request)
+    messages.success(request, ("Logout Successfully"))
+    return redirect('home')
 
 def user_registration(request):
     form = UserCreationForm()
