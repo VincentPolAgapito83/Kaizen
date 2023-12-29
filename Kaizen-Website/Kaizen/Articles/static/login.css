@@ -3,7 +3,7 @@ body{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: blue;
+    background-color: aquamarine;
 }
 
 .nav {
@@ -52,7 +52,7 @@ img{
     border-radius: 40%;
 }
 .modal{
-    background-color: blue;
+    background-color: aquamarine;
     overflow: auto;
     padding: 10px;
     width: 100%;
