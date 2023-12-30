@@ -1,12 +1,12 @@
 body{
     font-family: 'Arial Narrow';
-    background-color: blue;
+    background-color: aquamarine;
     box-sizing: border-box;
 }
 
 .container{
     padding: 0px;
-    background-color: blue;
+    background-color: aquamarine;
 
 }
 
