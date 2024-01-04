@@ -12,6 +12,11 @@ from django.db.models import Q
 import scholarly
 
 def user_profile(request):
+    API_KEY = open("API_KEY", "r").read()
+    user_profile_url = "https://serpapi.com/search?engine=google_scholar_profiles"
+
+    if request.method == "POST":
+        results = request.POST['results']
     return render(request, 'members/profile.html')
 
 
