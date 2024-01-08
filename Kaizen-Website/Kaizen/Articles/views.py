@@ -9,7 +9,18 @@ from django.contrib import messages
 from django.views.generic import TemplateView, ListView
 from .models import Articles
 from django.db.models import Q
-import scholarly
+from scholarly import scholarly
+
+
+
+def search_form(request):
+    if request.method == "POST":
+        searched = request.POST('searched')
+
+        return render(request, 'searchform.html', {'searched':searched})
+    else:
+        return render(request, 'searchform.html', {})
+
 
 def user_profile(request):
     API_KEY = open("API_KEY", "r").read()
@@ -17,16 +28,11 @@ def user_profile(request):
 
     if request.method == "POST":
         results = request.POST['results']
+        user_profile = request.POST['profile']
+
+        response_data = {'status':'success'}
+        return 
     return render(request, 'members/profile.html')
-
-
-def search_bar(request):
-    if request.method == "POST":
-        results = request.POST['results']
-        return render(request, 'searchbar.html',
-                       {'results':results}) 
-    else:
-        return render(request, 'searchbar.html', {})
     
 def user_logout(request):
     logout(request)

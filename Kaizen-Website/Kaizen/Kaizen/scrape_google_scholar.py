@@ -1,0 +1,2238 @@
+import json
+from serpapi import GoogleScholarSearch
+
+# search parameters
+params = {
+    "api_key": "secret_api_key",
+    "engine": "google_scholar_profiles",
+    "hl": "en",
+    "mauthors": "Computer Engineering"
+}
+
+search = GoogleScholarSearch(params)
+results = search.get_dict()
+
+# only first page results
+for result in results["profiles"]:
+    print(json.dumps(result, indent=2))
+
+# part of the output:
+'''
+{
+"search_metadata":
+{
+"id":
+"658ee571c90e0aaa1ee0031e",
+"status":
+"Success",
+"json_endpoint":
+"https://serpapi.com/searches/58b7a26c85d05beb/658ee571c90e0aaa1ee0031e.json",
+"created_at":
+"2023-12-29 15:27:45 UTC",
+"processed_at":
+"2023-12-29 15:27:45 UTC",
+"google_scholar_author_url":
+"https://scholar.google.com/citations?user=exSCWX0AAAAJ&hl=en",
+"raw_html_file":
+"https://serpapi.com/searches/58b7a26c85d05beb/658ee571c90e0aaa1ee0031e.html",
+"total_time_taken":
+0.85
+},
+"search_parameters":
+{
+"engine":
+"google_scholar_author",
+"author_id":
+"exSCWX0AAAAJ",
+"hl":
+"en"
+},
+"author":
+{
+"name":
+"ALONICA VILLANUEVA",
+"affiliations":
+"Technological Institute of the Philippines-Quezon City",
+"email":
+"Verified email at tip.edu.ph",
+"interests":
+[
+{
+"title":
+"Deep Learning",
+"link":
+"https://scholar.google.com/citations?view_op=search_authors&hl=en&mauthors=label:deep_learning",
+"serpapi_link":
+"https://serpapi.com/search.json?engine=google_scholar_profiles&hl=en&mauthors=label%3Adeep_learning"
+},
+{
+"title":
+"Data Science",
+"link":
+"https://scholar.google.com/citations?view_op=search_authors&hl=en&mauthors=label:data_science",
+"serpapi_link":
+"https://serpapi.com/search.json?engine=google_scholar_profiles&hl=en&mauthors=label%3Adata_science"
+},
+{
+"title":
+"Reinforcement Learning",
+"link":
+"https://scholar.google.com/citations?view_op=search_authors&hl=en&mauthors=label:reinforcement_learning",
+"serpapi_link":
+"https://serpapi.com/search.json?engine=google_scholar_profiles&hl=en&mauthors=label%3Areinforcement_learning"
+}
+],
+"thumbnail":
+"https://scholar.googleusercontent.com/citations?view_op=view_photo&user=exSCWX0AAAAJ&citpid=1"
+},
+"articles":
+[
+{
+"title":
+"Portable prevention and monitoring of driver’s drowsiness focuses to eyelid movement using Internet of Things",
+"link":
+"https://scholar.google.com/citations?view_op=view_citation&hl=en&user=exSCWX0AAAAJ&citation_for_view=exSCWX0AAAAJ:u5HHmVD_uO8C",
+"citation_id":
+"exSCWX0AAAAJ:u5HHmVD_uO8C",
+"authors":
+"M Miranda, A Villanueva, MJ Buo, R Merabite, SP Perez, JM Rodriguez",
+"publication":
+"2018 IEEE 10th International Conference on Humanoid, Nanotechnology …, 2018",
+"cited_by":
+{
+"value":
+16,
+"link":
+"https://scholar.google.com/scholar?oi=bibs&hl=en&cites=2863678850745916860",
+"serpapi_link":
+"https://serpapi.com/search.json?cites=2863678850745916860&engine=google_scholar&hl=en",
+"cites_id":
+"2863678850745916860"
+},
+"year":
+"2018"
+},
+{
+"title":
+"Deep reinforcement learning with noise injection for UAV path planning",
+"link":
+"https://scholar.google.com/citations?view_op=view_citation&hl=en&user=exSCWX0AAAAJ&citation_for_view=exSCWX0AAAAJ:9yKSN-GCB0IC",
+"citation_id":
+"exSCWX0AAAAJ:9yKSN-GCB0IC",
+"authors":
+"A Villanueva, A Fajardo",
+"publication":
+"2019 IEEE 6th International Conference on Engineering Technologies and …, 2019",
+"cited_by":
+{
+"value":
+12,
+"link":
+"https://scholar.google.com/scholar?oi=bibs&hl=en&cites=8476936188703707032",
+"serpapi_link":
+"https://serpapi.com/search.json?cites=8476936188703707032&engine=google_scholar&hl=en",
+"cites_id":
+"8476936188703707032"
+},
+"year":
+"2019"
+},
+{
+"title":
+"Somnolence detection system utilizing deep neural network",
+"link":
+"https://scholar.google.com/citations?view_op=view_citation&hl=en&user=exSCWX0AAAAJ&citation_for_view=exSCWX0AAAAJ:u-x6o8ySG0sC",
+"citation_id":
+"exSCWX0AAAAJ:u-x6o8ySG0sC",
+"authors":
+"A Villanueva, RLL Benemerito, MJM Cabug-Os, RB Chua, CKDC Rebeca, ...",
+"publication":
+"2019 International Conference on Information and Communications Technology …, 2019",
+"cited_by":
+{
+"value":
+6,
+"link":
+"https://scholar.google.com/scholar?oi=bibs&hl=en&cites=10187672932089821909",
+"serpapi_link":
+"https://serpapi.com/search.json?cites=10187672932089821909&engine=google_scholar&hl=en",
+"cites_id":
+"10187672932089821909"
+},
+"year":
+"2019"
+},
+{
+"title":
+"Bitcoin Price Forecasting using Time-series Architectures",
+"link":
+"https://scholar.google.com/citations?view_op=view_citation&hl=en&user=exSCWX0AAAAJ&citation_for_view=exSCWX0AAAAJ:Y0pCki6q_DkC",
+"citation_id":
+"exSCWX0AAAAJ:Y0pCki6q_DkC",
+"authors":
+"LGN De Leon, RC Gomez, MLG Tacal, JV Taylar, VV Nojor, ...",
+"publication":
+"2022 International Conference on ICT for Smart Society (ICISS), 1-6, 2022",
+"cited_by":
+{
+"value":
+3,
+"link":
+"https://scholar.google.com/scholar?oi=bibs&hl=en&cites=11116602761161876462",
+"serpapi_link":
+"https://serpapi.com/search.json?cites=11116602761161876462&engine=google_scholar&hl=en",
+"cites_id":
+"11116602761161876462"
+},
+"year":
+"2022"
+},
+{
+"title":
+"Application of Natural Language Processing for Phishing Detection Using Machine and Deep Learning Models",
+"link":
+"https://scholar.google.com/citations?view_op=view_citation&hl=en&user=exSCWX0AAAAJ&citation_for_view=exSCWX0AAAAJ:Tyk-4Ss8FVUC",
+"citation_id":
+"exSCWX0AAAAJ:Tyk-4Ss8FVUC",
+"authors":
+"A Villanueva, C Atibagos, J De Guzman, JCD Cruz, M Rosales, ...",
+"publication":
+"2022 International Conference on ICT for Smart Society (ICISS), 01-06, 2022",
+"cited_by":
+{
+"value":
+3,
+"link":
+"https://scholar.google.com/scholar?oi=bibs&hl=en&cites=6996501867003481073",
+"serpapi_link":
+"https://serpapi.com/search.json?cites=6996501867003481073&engine=google_scholar&hl=en",
+"cites_id":
+"6996501867003481073"
+},
+"year":
+"2022"
+},
+{
+"title":
+"Crack Detection and Classification for Reinforced Concrete Structures using Deep Learning",
+"link":
+"https://scholar.google.com/citations?view_op=view_citation&hl=en&user=exSCWX0AAAAJ&citation_for_view=exSCWX0AAAAJ:zYLM7Y9cAGgC",
+"citation_id":
+"exSCWX0AAAAJ:zYLM7Y9cAGgC",
+"authors":
+"A Villanueva, JKB Balba, CD Beceril, JLG Belza, RIP Tagle, MCA Venal, ...",
+"publication":
+"2022 2nd International Conference on Intelligent Technologies (CONIT), 1-6, 2022",
+"cited_by":
+{
+"value":
+3,
+"link":
+"https://scholar.google.com/scholar?oi=bibs&hl=en&cites=2724523157684046047",
+"serpapi_link":
+"https://serpapi.com/search.json?cites=2724523157684046047&engine=google_scholar&hl=en",
+"cites_id":
+"2724523157684046047"
+},
+"year":
+"2022"
+},
+{
+"title":
+"Real-Time Best-Fitted Crops Recommendation System Based On Agricultural Soil Health",
+"link":
+"https://scholar.google.com/citations?view_op=view_citation&hl=en&user=exSCWX0AAAAJ&citation_for_view=exSCWX0AAAAJ:eQOLeE2rZwMC",
+"citation_id":
+"exSCWX0AAAAJ:eQOLeE2rZwMC",
+"authors":
+"A Villanueva, A Dorado, EM Gerarman, JBF Quebral, MC Venal, ...",
+"publication":
+"2022 3rd International Informatics and Software Engineering Conference …, 2022",
+"cited_by":
+{
+"value":
+1,
+"link":
+"https://scholar.google.com/scholar?oi=bibs&hl=en&cites=3225179088225752311",
+"serpapi_link":
+"https://serpapi.com/search.json?cites=3225179088225752311&engine=google_scholar&hl=en",
+"cites_id":
+"3225179088225752311"
+},
+"year":
+"2022"
+},
+{
+"title":
+"Design of a Behavior Classification System for Monitoring Autism Spectrum Disorder using Deep Learning",
+"link":
+"https://scholar.google.com/citations?view_op=view_citation&hl=en&user=exSCWX0AAAAJ&citation_for_view=exSCWX0AAAAJ:YsMSGLbcyi4C",
+"citation_id":
+"exSCWX0AAAAJ:YsMSGLbcyi4C",
+"authors":
+"A Villanueva, SL McCarthy, DP Legaspi, DJ Mendoza, MC Venal, ...",
+"publication":
+"2022 3rd International Informatics and Software Engineering Conference …, 2022",
+"cited_by":
+{
+"value":
+1,
+"link":
+"https://scholar.google.com/scholar?oi=bibs&hl=en&cites=10417134059888709691",
+"serpapi_link":
+"https://serpapi.com/search.json?cites=10417134059888709691&engine=google_scholar&hl=en",
+"cites_id":
+"10417134059888709691"
+},
+"year":
+"2022"
+},
+{
+"title":
+"Multivariate Time Series Forecasting using ARIMAX, SARIMAX, and RNN-based Deep Learning Models on Electricity Consumption",
+"link":
+"https://scholar.google.com/citations?view_op=view_citation&hl=en&user=exSCWX0AAAAJ&citation_for_view=exSCWX0AAAAJ:W7OEmFMy1HYC",
+"citation_id":
+"exSCWX0AAAAJ:W7OEmFMy1HYC",
+"authors":
+"FV Atabay, RM Pagkalinawan, SD Pajarillo, AR Villanueva, JV Taylar",
+"publication":
+"2022 3rd International Informatics and Software Engineering Conference …, 2022",
+"cited_by":
+{
+"value":
+1,
+"link":
+"https://scholar.google.com/scholar?oi=bibs&hl=en&cites=7661487130925048631",
+"serpapi_link":
+"https://serpapi.com/search.json?cites=7661487130925048631&engine=google_scholar&hl=en",
+"cites_id":
+"7661487130925048631"
+},
+"year":
+"2022"
+},
+{
+"title":
+"Motor Vehicle Plate Recognition System for Philippine Law Enforcement Checkpoints Using Deep Learning",
+"link":
+"https://scholar.google.com/citations?view_op=view_citation&hl=en&user=exSCWX0AAAAJ&citation_for_view=exSCWX0AAAAJ:LkGwnXOMwfcC",
+"citation_id":
+"exSCWX0AAAAJ:LkGwnXOMwfcC",
+"authors":
+"CNJ Vasquez, AR Villanueva",
+"publication":
+"2023 IEEE 14th Control and System Graduate Research Colloquium (ICSGRC), 203-207, 2023",
+"cited_by":
+{
+"value":
+},
+"year":
+"2023"
+},
+{
+"title":
+"Network Anomaly Detection Using NetFlow and Network Automation",
+"link":
+"https://scholar.google.com/citations?view_op=view_citation&hl=en&user=exSCWX0AAAAJ&citation_for_view=exSCWX0AAAAJ:_FxGoFyzp5QC",
+"citation_id":
+"exSCWX0AAAAJ:_FxGoFyzp5QC",
+"authors":
+"ANS Aquino, AR Villanueva",
+"publication":
+"2023 11th International Symposium on Digital Forensics and Security (ISDFS), 1-6, 2023",
+"cited_by":
+{
+"value":
+},
+"year":
+"2023"
+},
+{
+"title":
+"Data Converter Device in Detecting Water Toxicity for Poultry Industry",
+"link":
+"https://scholar.google.com/citations?view_op=view_citation&hl=en&user=exSCWX0AAAAJ&citation_for_view=exSCWX0AAAAJ:ufrVoPGSRksC",
+"citation_id":
+"exSCWX0AAAAJ:ufrVoPGSRksC",
+"authors":
+"M Rosales, J Berasis, SK Dancel, A Sahagun, J Tacardon, A Villanueva",
+"publication":
+"2023 11th International Symposium on Digital Forensics and Security (ISDFS), 1-6, 2023",
+"cited_by":
+{
+"value":
+},
+"year":
+"2023"
+},
+{
+"title":
+"Development of Low-Latency and Real-Time Filipino Children Automatic Speech Recognition System using Deep Neural Network",
+"link":
+"https://scholar.google.com/citations?view_op=view_citation&hl=en&user=exSCWX0AAAAJ&citation_for_view=exSCWX0AAAAJ:WF5omc3nYNoC",
+"citation_id":
+"exSCWX0AAAAJ:WF5omc3nYNoC",
+"authors":
+"B Dorado, A Villanueva",
+"publication":
+"2023 11th International Symposium on Digital Forensics and Security (ISDFS), 1-6, 2023",
+"cited_by":
+{
+"value":
+},
+"year":
+"2023"
+},
+{
+"title":
+"Mobile-Based Translation System for Cebuano Language with Object Detection for Travel Assistance using Neural Machine Translation",
+"link":
+"https://scholar.google.com/citations?view_op=view_citation&hl=en&user=exSCWX0AAAAJ&citation_for_view=exSCWX0AAAAJ:d1gkVwhDpl0C",
+"citation_id":
+"exSCWX0AAAAJ:d1gkVwhDpl0C",
+"authors":
+"A Villanueva, R Balongcas, AJ Baltazar, BE Rosete, KO Roxas, ...",
+"publication":
+"2019 International Conference on Information and Communications Technology …, 2019",
+"cited_by":
+{
+"value":
+},
+"year":
+"2019"
+},
+{
+"title":
+"UAV Navigation System with Obstacle Detection using Deep Reinforcement Learning with Noise Injection",
+"link":
+"https://scholar.google.com/citations?view_op=view_citation&hl=en&user=exSCWX0AAAAJ&citation_for_view=exSCWX0AAAAJ:IjCSPb-OGe4C",
+"citation_id":
+"exSCWX0AAAAJ:IjCSPb-OGe4C",
+"authors":
+"AF Alonica Villanueva",
+"publication":
+"2019 International Conference on ICT for Smart Society (ICISS) 7, 2019",
+"cited_by":
+{
+"value":
+},
+"year":
+"2019"
+}
+],
+"cited_by":
+{
+"table":
+[
+{
+"citations":
+{
+"all":
+46,
+"since_2018":
+46
+}
+},
+{
+"h_index":
+{
+"all":
+3,
+"since_2018":
+3
+}
+},
+{
+"i10_index":
+{
+"all":
+2,
+"since_2018":
+2
+}
+}
+],
+"graph":
+[
+{
+"year":
+2019,
+"citations":
+1
+},
+{
+"year":
+2020,
+"citations":
+2
+},
+{
+"year":
+2021,
+"citations":
+6
+},
+{
+"year":
+2022,
+"citations":
+15
+},
+{
+"year":
+2023,
+"citations":
+22
+}
+]
+},
+"co_authors":
+[
+{
+"name":
+"Menchie Rosales",
+"link":
+"https://scholar.google.com/citations?user=UovPeqQAAAAJ&hl=en",
+"serpapi_link":
+"https://serpapi.com/search.json?author_id=UovPeqQAAAAJ&engine=google_scholar_author&hl=en",
+"author_id":
+"UovPeqQAAAAJ",
+"affiliations":
+"Technological Institute of the Philippines, Quezon City",
+"email":
+"Verified email at tip.edu.ph",
+"thumbnail":
+"https://scholar.googleusercontent.com/citations?view_op=small_photo&user=UovPeqQAAAAJ&citpid=1"
+},
+{
+"name":
+"Menchie Miranda",
+"link":
+"https://scholar.google.com/citations?user=avqnqpwAAAAJ&hl=en",
+"serpapi_link":
+"https://serpapi.com/search.json?author_id=avqnqpwAAAAJ&engine=google_scholar_author&hl=en",
+"author_id":
+"avqnqpwAAAAJ",
+"affiliations":
+"Technological Institute of the Philippines",
+"email":
+"Verified email at tip.edu.ph",
+"thumbnail":
+"https://scholar.googleusercontent.com/citations?view_op=small_photo&user=avqnqpwAAAAJ&citpid=1"
+},
+{
+"name":
+"Jonathan V. Taylar",
+"link":
+"https://scholar.google.com/citations?user=nURZKuwAAAAJ&hl=en",
+"serpapi_link":
+"https://serpapi.com/search.json?author_id=nURZKuwAAAAJ&engine=google_scholar_author&hl=en",
+"author_id":
+"nURZKuwAAAAJ",
+"affiliations":
+"Technological Institute of the Philippines",
+"email":
+"Verified email at tip.edu.ph",
+"thumbnail":
+"https://scholar.googleusercontent.com/citations?view_op=small_photo&user=nURZKuwAAAAJ&citpid=2"
+},
+{
+"name":
+"Ryan Francisco",
+"link":
+"https://scholar.google.com/citations?user=iSR2jM8AAAAJ&hl=en",
+"serpapi_link":
+"https://serpapi.com/search.json?author_id=iSR2jM8AAAAJ&engine=google_scholar_author&hl=en",
+"author_id":
+"iSR2jM8AAAAJ",
+"affiliations":
+"Professor of Engineering, Technological Institute of the Philippines",
+"email":
+"Verified email at tip.edu.ph",
+"thumbnail":
+"https://scholar.googleusercontent.com/citations?view_op=small_photo&user=iSR2jM8AAAAJ&citpid=1"
+},
+{
+"name":
+"Verlyn Nojor",
+"link":
+"https://scholar.google.com/citations?user=-o-FDkoAAAAJ&hl=en",
+"serpapi_link":
+"https://serpapi.com/search.json?author_id=-o-FDkoAAAAJ&engine=google_scholar_author&hl=en",
+"author_id":
+"-o-FDkoAAAAJ",
+"affiliations":
+"technological Institute of the Philippines",
+"email":
+"Verified email at tip.edu.ph",
+"thumbnail":
+"https://scholar.google.com/citations/images/avatar_scholar_56.png"
+},
+{
+"name":
+"Johnathan Richard Barrios",
+"link":
+"https://scholar.google.com/citations?user=7X2eY4gAAAAJ&hl=en",
+"serpapi_link":
+"https://serpapi.com/search.json?author_id=7X2eY4gAAAAJ&engine=google_scholar_author&hl=en",
+"author_id":
+"7X2eY4gAAAAJ",
+"affiliations":
+"Technological University of the Philippines",
+"email":
+"Verified email at tup.edu.ph",
+"thumbnail":
+"https://scholar.googleusercontent.com/citations?view_op=small_photo&user=7X2eY4gAAAAJ&citpid=1"
+}
+]
+}
+
+
+
+ {
+"search_metadata":
+{
+"id":
+"658ee594c9de4516dfec3a82",
+"status":
+"Success",
+"json_endpoint":
+"https://serpapi.com/searches/83b1a3582d43ca5b/658ee594c9de4516dfec3a82.json",
+"created_at":
+"2023-12-29 15:28:20 UTC",
+"processed_at":
+"2023-12-29 15:28:20 UTC",
+"google_scholar_author_url":
+"https://scholar.google.com/citations?user=nURZKuwAAAAJ&hl=en",
+"raw_html_file":
+"https://serpapi.com/searches/83b1a3582d43ca5b/658ee594c9de4516dfec3a82.html",
+"total_time_taken":
+0.95
+},
+"search_parameters":
+{
+"engine":
+"google_scholar_author",
+"author_id":
+"nURZKuwAAAAJ",
+"hl":
+"en"
+},
+"author":
+{
+"name":
+"Jonathan V. Taylar",
+"affiliations":
+"Technological Institute of the Philippines",
+"email":
+"Verified email at tip.edu.ph",
+"interests":
+[
+{
+"title":
+"Computing",
+"link":
+"https://scholar.google.com/citations?view_op=search_authors&hl=en&mauthors=label:computing",
+"serpapi_link":
+"https://serpapi.com/search.json?engine=google_scholar_profiles&hl=en&mauthors=label%3Acomputing"
+},
+{
+"title":
+"Deep Learning",
+"link":
+"https://scholar.google.com/citations?view_op=search_authors&hl=en&mauthors=label:deep_learning",
+"serpapi_link":
+"https://serpapi.com/search.json?engine=google_scholar_profiles&hl=en&mauthors=label%3Adeep_learning"
+},
+{
+"title":
+"Machine Learning",
+"link":
+"https://scholar.google.com/citations?view_op=search_authors&hl=en&mauthors=label:machine_learning",
+"serpapi_link":
+"https://serpapi.com/search.json?engine=google_scholar_profiles&hl=en&mauthors=label%3Amachine_learning"
+},
+{
+"title":
+"Artificial Intelligence",
+"link":
+"https://scholar.google.com/citations?view_op=search_authors&hl=en&mauthors=label:artificial_intelligence",
+"serpapi_link":
+"https://serpapi.com/search.json?engine=google_scholar_profiles&hl=en&mauthors=label%3Aartificial_intelligence"
+}
+],
+"thumbnail":
+"https://scholar.googleusercontent.com/citations?view_op=view_photo&user=nURZKuwAAAAJ&citpid=2"
+},
+"articles":
+[
+{
+"title":
+"Locational marginal price forecasting in a day-ahead power market using spatiotemporal deep learning network",
+"link":
+"https://scholar.google.com/citations?view_op=view_citation&hl=en&user=nURZKuwAAAAJ&citation_for_view=nURZKuwAAAAJ:VaXvl8Fpj5cC",
+"citation_id":
+"nURZKuwAAAAJ:VaXvl8Fpj5cC",
+"authors":
+"YY Hong, JV Taylar, AC Fajardo",
+"publication":
+"Sustainable Energy, Grids and Networks 24, 100406, 2020",
+"cited_by":
+{
+"value":
+29,
+"link":
+"https://scholar.google.com/scholar?oi=bibs&hl=en&cites=14351001063615104409",
+"serpapi_link":
+"https://serpapi.com/search.json?cites=14351001063615104409&engine=google_scholar&hl=en",
+"cites_id":
+"14351001063615104409"
+},
+"year":
+"2020"
+},
+{
+"title":
+"Locational marginal price forecasting using deep learning network optimized by mapping-based genetic algorithm",
+"link":
+"https://scholar.google.com/citations?view_op=view_citation&hl=en&user=nURZKuwAAAAJ&citation_for_view=nURZKuwAAAAJ:MLfJN-KU85MC",
+"citation_id":
+"nURZKuwAAAAJ:MLfJN-KU85MC",
+"authors":
+"YY Hong, JV Taylar, AC Fajardo",
+"publication":
+"IEEE Access 8, 91975-91988, 2020",
+"cited_by":
+{
+"value":
+26,
+"link":
+"https://scholar.google.com/scholar?oi=bibs&hl=en&cites=9936058269128227693",
+"serpapi_link":
+"https://serpapi.com/search.json?cites=9936058269128227693&engine=google_scholar&hl=en",
+"cites_id":
+"9936058269128227693"
+},
+"year":
+"2020"
+},
+{
+"title":
+"Bitcoin Price Forecasting using Time-series Architectures",
+"link":
+"https://scholar.google.com/citations?view_op=view_citation&hl=en&user=nURZKuwAAAAJ&citation_for_view=nURZKuwAAAAJ:LI9QrySNdTsC",
+"citation_id":
+"nURZKuwAAAAJ:LI9QrySNdTsC",
+"authors":
+"LGN De Leon, RC Gomez, MLG Tacal, JV Taylar, VV Nojor, ...",
+"publication":
+"2022 International Conference on ICT for Smart Society (ICISS), 1-6, 2022",
+"cited_by":
+{
+"value":
+3,
+"link":
+"https://scholar.google.com/scholar?oi=bibs&hl=en&cites=11116602761161876462",
+"serpapi_link":
+"https://serpapi.com/search.json?cites=11116602761161876462&engine=google_scholar&hl=en",
+"cites_id":
+"11116602761161876462"
+},
+"year":
+"2022"
+},
+{
+"title":
+"Stock market optimization amidst the COVID-19 pandemic: Technical analysis, K-means algorithm, and mean-variance model (TAKMV) approach",
+"link":
+"https://scholar.google.com/citations?view_op=view_citation&hl=en&user=nURZKuwAAAAJ&citation_for_view=nURZKuwAAAAJ:kz9GbA2Ns4gC",
+"citation_id":
+"nURZKuwAAAAJ:kz9GbA2Ns4gC",
+"authors":
+"MM Navarro, MN Young, YT Prasetyo, JV Taylar",
+"publication":
+"Heliyon, 2023",
+"cited_by":
+{
+"value":
+2,
+"link":
+"https://scholar.google.com/scholar?oi=bibs&hl=en&cites=10045888896364190019",
+"serpapi_link":
+"https://serpapi.com/search.json?cites=10045888896364190019&engine=google_scholar&hl=en",
+"cites_id":
+"10045888896364190019"
+},
+"year":
+"2023"
+},
+{
+"title":
+"Multivariate Time Series Forecasting using ARIMAX, SARIMAX, and RNN-based Deep Learning Models on Electricity Consumption",
+"link":
+"https://scholar.google.com/citations?view_op=view_citation&hl=en&user=nURZKuwAAAAJ&citation_for_view=nURZKuwAAAAJ:k8Z6L05lTy4C",
+"citation_id":
+"nURZKuwAAAAJ:k8Z6L05lTy4C",
+"authors":
+"FV Atabay, RM Pagkalinawan, SD Pajarillo, AR Villanueva, JV Taylar",
+"publication":
+"2022 3rd International Informatics and Software Engineering Conference …, 2022",
+"cited_by":
+{
+"value":
+1,
+"link":
+"https://scholar.google.com/scholar?oi=bibs&hl=en&cites=7661487130925048631",
+"serpapi_link":
+"https://serpapi.com/search.json?cites=7661487130925048631&engine=google_scholar&hl=en",
+"cites_id":
+"7661487130925048631"
+},
+"year":
+"2022"
+},
+{
+"title":
+"Cyber-Physical System Framework for Cerebrovascular Accidents using Machine Learning Algorithm",
+"link":
+"https://scholar.google.com/citations?view_op=view_citation&hl=en&user=nURZKuwAAAAJ&citation_for_view=nURZKuwAAAAJ:lmc2jWPfTJgC",
+"citation_id":
+"nURZKuwAAAAJ:lmc2jWPfTJgC",
+"authors":
+"RM Richard, JV Taylar",
+"publication":
+"2022 International Conference on ICT for Smart Society (ICISS), 01-08, 2022",
+"cited_by":
+{
+"value":
+1,
+"link":
+"https://scholar.google.com/scholar?oi=bibs&hl=en&cites=10669535256079737115",
+"serpapi_link":
+"https://serpapi.com/search.json?cites=10669535256079737115&engine=google_scholar&hl=en",
+"cites_id":
+"10669535256079737115"
+},
+"year":
+"2022"
+},
+{
+"title":
+"Corrigendum to “Stock market optimization amidst the COVID-19 pandemic: Technical analysis, K-means algorithm, and mean-variance model (TAKMV) approach”[9 (7)(July 2023) e17577]",
+"link":
+"https://scholar.google.com/citations?view_op=view_citation&hl=en&user=nURZKuwAAAAJ&citation_for_view=nURZKuwAAAAJ:M7yex6snE4oC",
+"citation_id":
+"nURZKuwAAAAJ:M7yex6snE4oC",
+"authors":
+"MM Navarro, MN Young, YT Prasetyo, JV Taylar",
+"publication":
+"Heliyon 9 (8), 2023",
+"cited_by":
+{
+"value":
+},
+"year":
+"2023"
+},
+{
+"title":
+"Classification of Roof Construction Materials using Satellite Images with Convolutional Neural Network",
+"link":
+"https://scholar.google.com/citations?view_op=view_citation&hl=en&user=nURZKuwAAAAJ&citation_for_view=nURZKuwAAAAJ:WZBGuue-350C",
+"citation_id":
+"nURZKuwAAAAJ:WZBGuue-350C",
+"authors":
+"CLB Santos, RP Medina, JV Taylar",
+"publication":
+"2023 International Conference on Digital Applications, Transformation …, 2023",
+"cited_by":
+{
+"value":
+},
+"year":
+"2023"
+}
+],
+"cited_by":
+{
+"table":
+[
+{
+"citations":
+{
+"all":
+62,
+"since_2018":
+62
+}
+},
+{
+"h_index":
+{
+"all":
+3,
+"since_2018":
+3
+}
+},
+{
+"i10_index":
+{
+"all":
+2,
+"since_2018":
+2
+}
+}
+],
+"graph":
+[
+{
+"year":
+2021,
+"citations":
+11
+},
+{
+"year":
+2022,
+"citations":
+22
+},
+{
+"year":
+2023,
+"citations":
+29
+}
+]
+},
+"co_authors":
+[
+{
+"name":
+"Ying-Yi Hong",
+"link":
+"https://scholar.google.com/citations?user=3lxPwx4AAAAJ&hl=en",
+"serpapi_link":
+"https://serpapi.com/search.json?author_id=3lxPwx4AAAAJ&engine=google_scholar_author&hl=en",
+"author_id":
+"3lxPwx4AAAAJ",
+"affiliations":
+"Chung Yuan Christian University",
+"email":
+"Verified email at ee.cycu.edu.tw",
+"thumbnail":
+"https://scholar.googleusercontent.com/citations?view_op=small_photo&user=3lxPwx4AAAAJ&citpid=6"
+},
+{
+"name":
+"ALONICA VILLANUEVA",
+"link":
+"https://scholar.google.com/citations?user=exSCWX0AAAAJ&hl=en",
+"serpapi_link":
+"https://serpapi.com/search.json?author_id=exSCWX0AAAAJ&engine=google_scholar_author&hl=en",
+"author_id":
+"exSCWX0AAAAJ",
+"affiliations":
+"Technological Institute of the Philippines-Quezon City",
+"email":
+"Verified email at tip.edu.ph",
+"thumbnail":
+"https://scholar.googleusercontent.com/citations?view_op=small_photo&user=exSCWX0AAAAJ&citpid=1"
+},
+{
+"name":
+"MARICAR M. NAVARRO",
+"link":
+"https://scholar.google.com/citations?user=VXExGZQAAAAJ&hl=en",
+"serpapi_link":
+"https://serpapi.com/search.json?author_id=VXExGZQAAAAJ&engine=google_scholar_author&hl=en",
+"author_id":
+"VXExGZQAAAAJ",
+"affiliations":
+"Technological Institute of the Philippines, QC",
+"email":
+"Verified email at tip.edu.ph",
+"thumbnail":
+"https://scholar.googleusercontent.com/citations?view_op=small_photo&user=VXExGZQAAAAJ&citpid=2"
+},
+{
+"name":
+"Verlyn Nojor",
+"link":
+"https://scholar.google.com/citations?user=-o-FDkoAAAAJ&hl=en",
+"serpapi_link":
+"https://serpapi.com/search.json?author_id=-o-FDkoAAAAJ&engine=google_scholar_author&hl=en",
+"author_id":
+"-o-FDkoAAAAJ",
+"affiliations":
+"technological Institute of the Philippines",
+"email":
+"Verified email at tip.edu.ph",
+"thumbnail":
+"https://scholar.google.com/citations/images/avatar_scholar_56.png"
+},
+{
+"name":
+"Roman M Richard",
+"link":
+"https://scholar.google.com/citations?user=PQa_bmcAAAAJ&hl=en",
+"serpapi_link":
+"https://serpapi.com/search.json?author_id=PQa_bmcAAAAJ&engine=google_scholar_author&hl=en",
+"author_id":
+"PQa_bmcAAAAJ",
+"affiliations":
+"Technological Institute of the Philippines",
+"email":
+"Verified email at tip.edu.ph",
+"thumbnail":
+"https://scholar.googleusercontent.com/citations?view_op=small_photo&user=PQa_bmcAAAAJ&citpid=2"
+},
+{
+"name":
+"Arnel Fajardo",
+"link":
+"https://scholar.google.com/citations?user=wTIyQm0AAAAJ&hl=en",
+"serpapi_link":
+"https://serpapi.com/search.json?author_id=wTIyQm0AAAAJ&engine=google_scholar_author&hl=en",
+"author_id":
+"wTIyQm0AAAAJ",
+"affiliations":
+"Associate Professor 5,Isabela State University Cauayan",
+"thumbnail":
+"https://scholar.google.com/citations/images/avatar_scholar_56.png"
+}
+]
+}
+
+
+{
+"search_metadata":
+{
+"id":
+"658ee5b34d443d436037bf07",
+"status":
+"Success",
+"json_endpoint":
+"https://serpapi.com/searches/3e89885fadff0027/658ee5b34d443d436037bf07.json",
+"created_at":
+"2023-12-29 15:28:51 UTC",
+"processed_at":
+"2023-12-29 15:28:51 UTC",
+"google_scholar_author_url":
+"https://scholar.google.com/citations?user=PQa_bmcAAAAJ&hl=en",
+"raw_html_file":
+"https://serpapi.com/searches/3e89885fadff0027/658ee5b34d443d436037bf07.html",
+"total_time_taken":
+1.75
+},
+"search_parameters":
+{
+"engine":
+"google_scholar_author",
+"author_id":
+"PQa_bmcAAAAJ",
+"hl":
+"en"
+},
+"author":
+{
+"name":
+"Roman M Richard",
+"affiliations":
+"Technological Institute of the Philippines",
+"email":
+"Verified email at tip.edu.ph",
+"interests":
+[
+{
+"title":
+"Cyber-Physical Systems",
+"link":
+"https://scholar.google.com/citations?view_op=search_authors&hl=en&mauthors=label:cyber_physical_systems",
+"serpapi_link":
+"https://serpapi.com/search.json?engine=google_scholar_profiles&hl=en&mauthors=label%3Acyber_physical_systems"
+},
+{
+"title":
+"Computer Vision",
+"link":
+"https://scholar.google.com/citations?view_op=search_authors&hl=en&mauthors=label:computer_vision",
+"serpapi_link":
+"https://serpapi.com/search.json?engine=google_scholar_profiles&hl=en&mauthors=label%3Acomputer_vision"
+},
+{
+"title":
+"Machine/Deep Learning",
+"link":
+"https://scholar.google.com/citations?view_op=search_authors&hl=en&mauthors=label:machine_deep_learning",
+"serpapi_link":
+"https://serpapi.com/search.json?engine=google_scholar_profiles&hl=en&mauthors=label%3Amachine_deep_learning"
+}
+],
+"thumbnail":
+"https://scholar.googleusercontent.com/citations?view_op=view_photo&user=PQa_bmcAAAAJ&citpid=2"
+},
+"articles":
+[
+{
+"title":
+"Cyber-Physical System Framework for Cerebrovascular Accidents using Machine Learning Algorithm",
+"link":
+"https://scholar.google.com/citations?view_op=view_citation&hl=en&user=PQa_bmcAAAAJ&citation_for_view=PQa_bmcAAAAJ:u-x6o8ySG0sC",
+"citation_id":
+"PQa_bmcAAAAJ:u-x6o8ySG0sC",
+"authors":
+"RM Richard, JV Taylar",
+"publication":
+"2022 International Conference on ICT for Smart Society (ICISS), 01-08, 2022",
+"cited_by":
+{
+"value":
+1,
+"link":
+"https://scholar.google.com/scholar?oi=bibs&hl=en&cites=10669535256079737115",
+"serpapi_link":
+"https://serpapi.com/search.json?cites=10669535256079737115&engine=google_scholar&hl=en",
+"cites_id":
+"10669535256079737115"
+},
+"year":
+"2022"
+}
+],
+"cited_by":
+{
+"table":
+[
+{
+"citations":
+{
+"all":
+1,
+"since_2018":
+1
+}
+},
+{
+"h_index":
+{
+"all":
+1,
+"since_2018":
+1
+}
+},
+{
+"i10_index":
+{
+"all":
+0,
+"since_2018":
+0
+}
+}
+]
+},
+"co_authors":
+[
+{
+"name":
+"Jonathan V. Taylar",
+"link":
+"https://scholar.google.com/citations?user=nURZKuwAAAAJ&hl=en",
+"serpapi_link":
+"https://serpapi.com/search.json?author_id=nURZKuwAAAAJ&engine=google_scholar_author&hl=en",
+"author_id":
+"nURZKuwAAAAJ",
+"affiliations":
+"Technological Institute of the Philippines",
+"email":
+"Verified email at tip.edu.ph",
+"thumbnail":
+"https://scholar.googleusercontent.com/citations?view_op=small_photo&user=nURZKuwAAAAJ&citpid=2"
+}
+]
+}
+
+
+{
+"search_metadata":
+{
+"id":
+"658ee5ef3944b057eb1fbc98",
+"status":
+"Success",
+"json_endpoint":
+"https://serpapi.com/searches/1982e9e51c1d9a2c/658ee5ef3944b057eb1fbc98.json",
+"created_at":
+"2023-12-29 15:29:51 UTC",
+"processed_at":
+"2023-12-29 15:29:51 UTC",
+"google_scholar_author_url":
+"https://scholar.google.com/citations?user=avqnqpwAAAAJ&hl=en",
+"raw_html_file":
+"https://serpapi.com/searches/1982e9e51c1d9a2c/658ee5ef3944b057eb1fbc98.html",
+"total_time_taken":
+1.36
+},
+"search_parameters":
+{
+"engine":
+"google_scholar_author",
+"author_id":
+"avqnqpwAAAAJ",
+"hl":
+"en"
+},
+"author":
+{
+"name":
+"Menchie Miranda",
+"affiliations":
+"Technological Institute of the Philippines",
+"email":
+"Verified email at tip.edu.ph",
+"interests":
+[
+{
+"title":
+"Machine Learning",
+"link":
+"https://scholar.google.com/citations?view_op=search_authors&hl=en&mauthors=label:machine_learning",
+"serpapi_link":
+"https://serpapi.com/search.json?engine=google_scholar_profiles&hl=en&mauthors=label%3Amachine_learning"
+}
+],
+"thumbnail":
+"https://scholar.googleusercontent.com/citations?view_op=medium_photo&user=avqnqpwAAAAJ&citpid=1"
+},
+"articles":
+[
+{
+"title":
+"Portable prevention and monitoring of driver’s drowsiness focuses to eyelid movement using Internet of Things",
+"link":
+"https://scholar.google.com/citations?view_op=view_citation&hl=en&user=avqnqpwAAAAJ&citation_for_view=avqnqpwAAAAJ:u5HHmVD_uO8C",
+"citation_id":
+"avqnqpwAAAAJ:u5HHmVD_uO8C",
+"authors":
+"M Miranda, A Villanueva, MJ Buo, R Merabite, SP Perez, JM Rodriguez",
+"publication":
+"2018 IEEE 10th International Conference on Humanoid, Nanotechnology …, 2018",
+"cited_by":
+{
+"value":
+16,
+"link":
+"https://scholar.google.com/scholar?oi=bibs&hl=en&cites=2863678850745916860",
+"serpapi_link":
+"https://serpapi.com/search.json?cites=2863678850745916860&engine=google_scholar&hl=en",
+"cites_id":
+"2863678850745916860"
+},
+"year":
+"2018"
+},
+{
+"title":
+"Somnolence detection system utilizing deep neural network",
+"link":
+"https://scholar.google.com/citations?view_op=view_citation&hl=en&user=avqnqpwAAAAJ&citation_for_view=avqnqpwAAAAJ:u-x6o8ySG0sC",
+"citation_id":
+"avqnqpwAAAAJ:u-x6o8ySG0sC",
+"authors":
+"A Villanueva, RLL Benemerito, MJM Cabug-Os, RB Chua, CKDC Rebeca, ...",
+"publication":
+"2019 International Conference on Information and Communications Technology …, 2019",
+"cited_by":
+{
+"value":
+6,
+"link":
+"https://scholar.google.com/scholar?oi=bibs&hl=en&cites=10187672932089821909",
+"serpapi_link":
+"https://serpapi.com/search.json?cites=10187672932089821909&engine=google_scholar&hl=en",
+"cites_id":
+"10187672932089821909"
+},
+"year":
+"2019"
+}
+],
+"cited_by":
+{
+"table":
+[
+{
+"citations":
+{
+"all":
+22,
+"since_2018":
+22
+}
+},
+{
+"h_index":
+{
+"all":
+2,
+"since_2018":
+2
+}
+},
+{
+"i10_index":
+{
+"all":
+1,
+"since_2018":
+1
+}
+}
+],
+"graph":
+[
+{
+"year":
+2019,
+"citations":
+1
+},
+{
+"year":
+2020,
+"citations":
+2
+},
+{
+"year":
+2021,
+"citations":
+4
+},
+{
+"year":
+2022,
+"citations":
+9
+},
+{
+"year":
+2023,
+"citations":
+6
+}
+]
+},
+"co_authors":
+[
+{
+"name":
+"ALONICA VILLANUEVA",
+"link":
+"https://scholar.google.com/citations?user=exSCWX0AAAAJ&hl=en",
+"serpapi_link":
+"https://serpapi.com/search.json?author_id=exSCWX0AAAAJ&engine=google_scholar_author&hl=en",
+"author_id":
+"exSCWX0AAAAJ",
+"affiliations":
+"Technological Institute of the Philippines-Quezon City",
+"email":
+"Verified email at tip.edu.ph",
+"thumbnail":
+"https://scholar.googleusercontent.com/citations?view_op=small_photo&user=exSCWX0AAAAJ&citpid=1"
+}
+]
+}
+
+
+{
+"search_metadata":
+{
+"id":
+"658ee617af5af1e4e4e49eae",
+"status":
+"Success",
+"json_endpoint":
+"https://serpapi.com/searches/49a1432f31427b93/658ee617af5af1e4e4e49eae.json",
+"created_at":
+"2023-12-29 15:30:31 UTC",
+"processed_at":
+"2023-12-29 15:30:31 UTC",
+"google_scholar_author_url":
+"https://scholar.google.com/citations?user=hSAWITsAAAAJ&hl=en",
+"raw_html_file":
+"https://serpapi.com/searches/49a1432f31427b93/658ee617af5af1e4e4e49eae.html",
+"total_time_taken":
+1.08
+},
+"search_parameters":
+{
+"engine":
+"google_scholar_author",
+"author_id":
+"hSAWITsAAAAJ",
+"hl":
+"en"
+},
+"author":
+{
+"name":
+"Maria Cecilia A. Venal",
+"affiliations":
+"Computer",
+"email":
+"No verified email",
+"thumbnail":
+"https://scholar.google.com/citations/images/avatar_scholar_128.png"
+},
+"articles":
+[
+{
+"title":
+"Plant stress classification for smart agriculture utilizing convolutional neural network-support vector machine",
+"link":
+"https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hSAWITsAAAAJ&citation_for_view=hSAWITsAAAAJ:d1gkVwhDpl0C",
+"citation_id":
+"hSAWITsAAAAJ:d1gkVwhDpl0C",
+"authors":
+"MCA Venal, AC Fajardo, AA Hernandez",
+"publication":
+"2019 International Conference on ICT for Smart Society (ICISS) 7, 1-5, 2019",
+"cited_by":
+{
+"value":
+8,
+"link":
+"https://scholar.google.com/scholar?oi=bibs&hl=en&cites=15071192138936701666",
+"serpapi_link":
+"https://serpapi.com/search.json?cites=15071192138936701666&engine=google_scholar&hl=en",
+"cites_id":
+"15071192138936701666"
+},
+"year":
+"2019"
+},
+{
+"title":
+"Lyco-frequency: A development of lycopersicon esculentum fruit classification for tomato catsup production using frequency sensing effect",
+"link":
+"https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hSAWITsAAAAJ&citation_for_view=hSAWITsAAAAJ:u5HHmVD_uO8C",
+"citation_id":
+"hSAWITsAAAAJ:u5HHmVD_uO8C",
+"authors":
+"AS Alon, MCA Venal, SV Militante, MD Hernandez, HB Acla",
+"publication":
+"International Journal 9 (4), 2020",
+"cited_by":
+{
+"value":
+6,
+"link":
+"https://scholar.google.com/scholar?oi=bibs&hl=en&cites=4037764016313451559",
+"serpapi_link":
+"https://serpapi.com/search.json?cites=4037764016313451559&engine=google_scholar&hl=en",
+"cites_id":
+"4037764016313451559"
+},
+"year":
+"2020"
+},
+{
+"title":
+"Cloud-based Portable Rice Milling Machine using Internet of Things",
+"link":
+"https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hSAWITsAAAAJ&citation_for_view=hSAWITsAAAAJ:UeHWp8X0CEIC",
+"citation_id":
+"hSAWITsAAAAJ:UeHWp8X0CEIC",
+"authors":
+"MM Rosales, GMC Coronel, JKP Lorilla, FJF Ramos, JPV Noche, ...",
+"publication":
+"2022 2nd International Conference on Intelligent Technologies (CONIT), 1-7, 2022",
+"cited_by":
+{
+"value":
+4,
+"link":
+"https://scholar.google.com/scholar?oi=bibs&hl=en&cites=9938853669842875066",
+"serpapi_link":
+"https://serpapi.com/search.json?cites=9938853669842875066&engine=google_scholar&hl=en",
+"cites_id":
+"9938853669842875066"
+},
+"year":
+"2022"
+},
+{
+"title":
+"Crack Detection and Classification for Reinforced Concrete Structures using Deep Learning",
+"link":
+"https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hSAWITsAAAAJ&citation_for_view=hSAWITsAAAAJ:qjMakFHDy7sC",
+"citation_id":
+"hSAWITsAAAAJ:qjMakFHDy7sC",
+"authors":
+"A Villanueva, JKB Balba, CD Beceril, JLG Belza, RIP Tagle, MCA Venal, ...",
+"publication":
+"2022 2nd International Conference on Intelligent Technologies (CONIT), 1-6, 2022",
+"cited_by":
+{
+"value":
+3,
+"link":
+"https://scholar.google.com/scholar?oi=bibs&hl=en&cites=2724523157684046047",
+"serpapi_link":
+"https://serpapi.com/search.json?cites=2724523157684046047&engine=google_scholar&hl=en",
+"cites_id":
+"2724523157684046047"
+},
+"year":
+"2022"
+},
+{
+"title":
+"Real-Time Best-Fitted Crops Recommendation System Based On Agricultural Soil Health",
+"link":
+"https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hSAWITsAAAAJ&citation_for_view=hSAWITsAAAAJ:Tyk-4Ss8FVUC",
+"citation_id":
+"hSAWITsAAAAJ:Tyk-4Ss8FVUC",
+"authors":
+"A Villanueva, A Dorado, EM Gerarman, JBF Quebral, MC Venal, ...",
+"publication":
+"2022 3rd International Informatics and Software Engineering Conference …, 2022",
+"cited_by":
+{
+"value":
+1,
+"link":
+"https://scholar.google.com/scholar?oi=bibs&hl=en&cites=3225179088225752311",
+"serpapi_link":
+"https://serpapi.com/search.json?cites=3225179088225752311&engine=google_scholar&hl=en",
+"cites_id":
+"3225179088225752311"
+},
+"year":
+"2022"
+},
+{
+"title":
+"Design of a Behavior Classification System for Monitoring Autism Spectrum Disorder using Deep Learning",
+"link":
+"https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hSAWITsAAAAJ&citation_for_view=hSAWITsAAAAJ:zYLM7Y9cAGgC",
+"citation_id":
+"hSAWITsAAAAJ:zYLM7Y9cAGgC",
+"authors":
+"A Villanueva, SL McCarthy, DP Legaspi, DJ Mendoza, MC Venal, ...",
+"publication":
+"2022 3rd International Informatics and Software Engineering Conference …, 2022",
+"cited_by":
+{
+"value":
+1,
+"link":
+"https://scholar.google.com/scholar?oi=bibs&hl=en&cites=10417134059888709691",
+"serpapi_link":
+"https://serpapi.com/search.json?cites=10417134059888709691&engine=google_scholar&hl=en",
+"cites_id":
+"10417134059888709691"
+},
+"year":
+"2022"
+},
+{
+"title":
+"Readiness of Computer Engineering Students of TIPQC to Online Learning",
+"link":
+"https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hSAWITsAAAAJ&citation_for_view=hSAWITsAAAAJ:9yKSN-GCB0IC",
+"citation_id":
+"hSAWITsAAAAJ:9yKSN-GCB0IC",
+"authors":
+"MCD Atienza-Venal",
+"publication":
+"2009 Second International Conference on Computer and Electrical Engineering …, 2009",
+"cited_by":
+{
+"value":
+1,
+"link":
+"https://scholar.google.com/scholar?oi=bibs&hl=en&cites=16356824833491468990",
+"serpapi_link":
+"https://serpapi.com/search.json?cites=16356824833491468990&engine=google_scholar&hl=en",
+"cites_id":
+"16356824833491468990"
+},
+"year":
+"2009"
+},
+{
+"title":
+"Local-Export Quality Classification Device for Multiple Unripe Carabao Mango using Single Shot Detector Algorithm",
+"link":
+"https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hSAWITsAAAAJ&citation_for_view=hSAWITsAAAAJ:Y0pCki6q_DkC",
+"citation_id":
+"hSAWITsAAAAJ:Y0pCki6q_DkC",
+"authors":
+"M Rosales, RM Culpable, C Cayanan, G Forcadela, GM Boctil, MC Venal",
+"publication":
+"2023 11th International Symposium on Digital Forensics and Security (ISDFS), 1-6, 2023",
+"cited_by":
+{
+"value":
+},
+"year":
+"2023"
+},
+{
+"title":
+"Design of a Deep Learning-based Detection System for Criminal Activities",
+"link":
+"https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hSAWITsAAAAJ&citation_for_view=hSAWITsAAAAJ:IjCSPb-OGe4C",
+"citation_id":
+"hSAWITsAAAAJ:IjCSPb-OGe4C",
+"authors":
+"VV Nojor, JAC Austria, AA Galit, JTB Guevarra, KQ Jogno, MCA Venal, ...",
+"publication":
+"2022 3rd International Informatics and Software Engineering Conference …, 2022",
+"cited_by":
+{
+"value":
+},
+"year":
+"2022"
+},
+{
+"title":
+"Mobile-Based Translation System for Cebuano Language with Object Detection for Travel Assistance using Neural Machine Translation",
+"link":
+"https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hSAWITsAAAAJ&citation_for_view=hSAWITsAAAAJ:2osOgNQ5qMEC",
+"citation_id":
+"hSAWITsAAAAJ:2osOgNQ5qMEC",
+"authors":
+"A Villanueva, R Balongcas, AJ Baltazar, BE Rosete, KO Roxas, ...",
+"publication":
+"2019 International Conference on Information and Communications Technology …, 2019",
+"cited_by":
+{
+"value":
+},
+"year":
+"2019"
+},
+{
+"title":
+"A HYBRID MODEL FOR CLASSIFYING PLANT STRESSES",
+"link":
+"https://scholar.google.com/citations?view_op=view_citation&hl=en&user=hSAWITsAAAAJ&citation_for_view=hSAWITsAAAAJ:u-x6o8ySG0sC",
+"citation_id":
+"hSAWITsAAAAJ:u-x6o8ySG0sC",
+"authors":
+"MCA Venal, AC Fajardo, AA Hernandez",
+"cited_by":
+{
+"value":
+},
+"year":
+""
+}
+],
+"cited_by":
+{
+"table":
+[
+{
+"citations":
+{
+"all":
+24,
+"since_2018":
+24
+}
+},
+{
+"h_index":
+{
+"all":
+3,
+"since_2018":
+3
+}
+},
+{
+"i10_index":
+{
+"all":
+0,
+"since_2018":
+0
+}
+}
+],
+"graph":
+[
+{
+"year":
+2020,
+"citations":
+2
+},
+{
+"year":
+2021,
+"citations":
+3
+},
+{
+"year":
+2022,
+"citations":
+5
+},
+{
+"year":
+2023,
+"citations":
+14
+}
+]
+}
+}
+
+
+{
+"search_metadata":
+{
+"id":
+"658ee6df4d443d43f6d210de",
+"status":
+"Success",
+"json_endpoint":
+"https://serpapi.com/searches/2c1dd42dd11ae365/658ee6df4d443d43f6d210de.json",
+"created_at":
+"2023-12-29 15:33:51 UTC",
+"processed_at":
+"2023-12-29 15:33:51 UTC",
+"google_scholar_author_url":
+"https://scholar.google.com/citations?user=-o-FDkoAAAAJ&hl=en",
+"raw_html_file":
+"https://serpapi.com/searches/2c1dd42dd11ae365/658ee6df4d443d43f6d210de.html",
+"total_time_taken":
+1.30
+},
+"search_parameters":
+{
+"engine":
+"google_scholar_author",
+"author_id":
+"-o-FDkoAAAAJ",
+"hl":
+"en"
+},
+"author":
+{
+"name":
+"Verlyn Nojor",
+"affiliations":
+"technological Institute of the Philippines",
+"email":
+"Verified email at tip.edu.ph",
+"thumbnail":
+"https://scholar.google.com/citations/images/avatar_scholar_128.png"
+},
+"articles":
+[
+{
+"title":
+"Portable automated bag-valve mask with android technology",
+"link":
+"https://scholar.google.com/citations?view_op=view_citation&hl=en&user=-o-FDkoAAAAJ&citation_for_view=-o-FDkoAAAAJ:u5HHmVD_uO8C",
+"citation_id":
+"-o-FDkoAAAAJ:u5HHmVD_uO8C",
+"authors":
+"VC Vicente, JN Padilla, BT Tanguilig III",
+"publication":
+"International Journal of Advanced Technology and Engineering Exploration 3 …, 2016",
+"cited_by":
+{
+"value":
+4,
+"link":
+"https://scholar.google.com/scholar?oi=bibs&hl=en&cites=633350764300374671",
+"serpapi_link":
+"https://serpapi.com/search.json?cites=633350764300374671&engine=google_scholar&hl=en",
+"cites_id":
+"633350764300374671"
+},
+"year":
+"2016"
+},
+{
+"title":
+"Bitcoin Price Forecasting using Time-series Architectures",
+"link":
+"https://scholar.google.com/citations?view_op=view_citation&hl=en&user=-o-FDkoAAAAJ&citation_for_view=-o-FDkoAAAAJ:d1gkVwhDpl0C",
+"citation_id":
+"-o-FDkoAAAAJ:d1gkVwhDpl0C",
+"authors":
+"LGN De Leon, RC Gomez, MLG Tacal, JV Taylar, VV Nojor, ...",
+"publication":
+"2022 International Conference on ICT for Smart Society (ICISS), 1-6, 2022",
+"cited_by":
+{
+"value":
+3,
+"link":
+"https://scholar.google.com/scholar?oi=bibs&hl=en&cites=11116602761161876462",
+"serpapi_link":
+"https://serpapi.com/search.json?cites=11116602761161876462&engine=google_scholar&hl=en",
+"cites_id":
+"11116602761161876462"
+},
+"year":
+"2022"
+},
+{
+"title":
+"Design of a Deep Learning-based Detection System for Criminal Activities",
+"link":
+"https://scholar.google.com/citations?view_op=view_citation&hl=en&user=-o-FDkoAAAAJ&citation_for_view=-o-FDkoAAAAJ:u-x6o8ySG0sC",
+"citation_id":
+"-o-FDkoAAAAJ:u-x6o8ySG0sC",
+"authors":
+"VV Nojor, JAC Austria, AA Galit, JTB Guevarra, KQ Jogno, MCA Venal, ...",
+"publication":
+"2022 3rd International Informatics and Software Engineering Conference …, 2022",
+"cited_by":
+{
+"value":
+},
+"year":
+"2022"
+}
+],
+"cited_by":
+{
+"table":
+[
+{
+"citations":
+{
+"all":
+7,
+"since_2018":
+7
+}
+},
+{
+"h_index":
+{
+"all":
+2,
+"since_2018":
+2
+}
+},
+{
+"i10_index":
+{
+"all":
+0,
+"since_2018":
+0
+}
+}
+],
+"graph":
+[
+{
+"year":
+2020,
+"citations":
+2
+},
+{
+"year":
+2021,
+"citations":
+1
+},
+{
+"year":
+2022,
+"citations":
+1
+},
+{
+"year":
+2023,
+"citations":
+3
+}
+]
+}
+}
+
+
+{
+"search_metadata":
+{
+"id":
+"658ee7489f55b3c00e31c925",
+"status":
+"Success",
+"json_endpoint":
+"https://serpapi.com/searches/df4935be84302304/658ee7489f55b3c00e31c925.json",
+"created_at":
+"2023-12-29 15:35:36 UTC",
+"processed_at":
+"2023-12-29 15:35:36 UTC",
+"google_scholar_author_url":
+"https://scholar.google.com/citations?user=iSR2jM8AAAAJ&hl=en",
+"raw_html_file":
+"https://serpapi.com/searches/df4935be84302304/658ee7489f55b3c00e31c925.html",
+"total_time_taken":
+5.23
+},
+"search_parameters":
+{
+"engine":
+"google_scholar_author",
+"author_id":
+"iSR2jM8AAAAJ",
+"hl":
+"en"
+},
+"author":
+{
+"name":
+"Ryan Francisco",
+"affiliations":
+"Professor of Engineering, Technological Institute of the Philippines",
+"email":
+"Verified email at tip.edu.ph",
+"interests":
+[
+{
+"title":
+"Embedded System",
+"link":
+"https://scholar.google.com/citations?view_op=search_authors&hl=en&mauthors=label:embedded_system",
+"serpapi_link":
+"https://serpapi.com/search.json?engine=google_scholar_profiles&hl=en&mauthors=label%3Aembedded_system"
+},
+{
+"title":
+"Cryptocurrency Internet of Things",
+"link":
+"https://scholar.google.com/citations?view_op=search_authors&hl=en&mauthors=label:cryptocurrency_internet_of_things",
+"serpapi_link":
+"https://serpapi.com/search.json?engine=google_scholar_profiles&hl=en&mauthors=label%3Acryptocurrency_internet_of_things"
+}
+],
+"thumbnail":
+"https://scholar.googleusercontent.com/citations?view_op=view_photo&user=iSR2jM8AAAAJ&citpid=1"
+},
+"articles":
+[
+{
+"title":
+"The perception of Filipinos on the advent of cryptocurrency and non-fungible token (NFT) games",
+"link":
+"https://scholar.google.com/citations?view_op=view_citation&hl=en&user=iSR2jM8AAAAJ&citation_for_view=iSR2jM8AAAAJ:u5HHmVD_uO8C",
+"citation_id":
+"iSR2jM8AAAAJ:u5HHmVD_uO8C",
+"authors":
+"R Francisco, N Rodelas, JE Ubaldo",
+"publication":
+"arXiv preprint arXiv:2202.07467, 2022",
+"cited_by":
+{
+"value":
+21,
+"link":
+"https://scholar.google.com/scholar?oi=bibs&hl=en&cites=4539226913845748009",
+"serpapi_link":
+"https://serpapi.com/search.json?cites=4539226913845748009&engine=google_scholar&hl=en",
+"cites_id":
+"4539226913845748009"
+},
+"year":
+"2022"
+},
+{
+"title":
+"Application of Natural Language Processing for Phishing Detection Using Machine and Deep Learning Models",
+"link":
+"https://scholar.google.com/citations?view_op=view_citation&hl=en&user=iSR2jM8AAAAJ&citation_for_view=iSR2jM8AAAAJ:u-x6o8ySG0sC",
+"citation_id":
+"iSR2jM8AAAAJ:u-x6o8ySG0sC",
+"authors":
+"A Villanueva, C Atibagos, J De Guzman, JCD Cruz, M Rosales, ...",
+"publication":
+"2022 International Conference on ICT for Smart Society (ICISS), 01-06, 2022",
+"cited_by":
+{
+"value":
+3,
+"link":
+"https://scholar.google.com/scholar?oi=bibs&hl=en&cites=6996501867003481073",
+"serpapi_link":
+"https://serpapi.com/search.json?cites=6996501867003481073&engine=google_scholar&hl=en",
+"cites_id":
+"6996501867003481073"
+},
+"year":
+"2022"
+}
+],
+"cited_by":
+{
+"table":
+[
+{
+"citations":
+{
+"all":
+24,
+"since_2018":
+24
+}
+},
+{
+"h_index":
+{
+"all":
+2,
+"since_2018":
+2
+}
+},
+{
+"i10_index":
+{
+"all":
+1,
+"since_2018":
+1
+}
+}
+],
+"graph":
+[
+{
+"year":
+2022,
+"citations":
+9
+},
+{
+"year":
+2023,
+"citations":
+15
+}
+]
+},
+"co_authors":
+[
+{
+"name":
+"John Edison Ubaldo",
+"link":
+"https://scholar.google.com/citations?user=su0dV6wAAAAJ&hl=en",
+"serpapi_link":
+"https://serpapi.com/search.json?author_id=su0dV6wAAAAJ&engine=google_scholar_author&hl=en",
+"author_id":
+"su0dV6wAAAAJ",
+"affiliations":
+"Third World Studies Center",
+"email":
+"Verified email at up.edu.ph",
+"thumbnail":
+"https://scholar.googleusercontent.com/citations?view_op=small_photo&user=su0dV6wAAAAJ&citpid=1"
+},
+{
+"name":
+"NELSON RODELAS",
+"link":
+"https://scholar.google.com/citations?user=yUSDP-MAAAAJ&hl=en",
+"serpapi_link":
+"https://serpapi.com/search.json?author_id=yUSDP-MAAAAJ&engine=google_scholar_author&hl=en",
+"author_id":
+"yUSDP-MAAAAJ",
+"affiliations":
+"Professor",
+"email":
+"Verified email at ue.edu.ph",
+"thumbnail":
+"https://scholar.googleusercontent.com/citations?view_op=small_photo&user=yUSDP-MAAAAJ&citpid=1"
+},
+{
+"name":
+"ALONICA VILLANUEVA",
+"link":
+"https://scholar.google.com/citations?user=exSCWX0AAAAJ&hl=en",
+"serpapi_link":
+"https://serpapi.com/search.json?author_id=exSCWX0AAAAJ&engine=google_scholar_author&hl=en",
+"author_id":
+"exSCWX0AAAAJ",
+"affiliations":
+"Technological Institute of the Philippines-Quezon City",
+"email":
+"Verified email at tip.edu.ph",
+"thumbnail":
+"https://scholar.googleusercontent.com/citations?view_op=small_photo&user=exSCWX0AAAAJ&citpid=1"
+}
+]
+}
+
+{
+"search_metadata":
+{
+"id":
+"658ee5b34d443d436037bf07",
+"status":
+"Success",
+"json_endpoint":
+"https://serpapi.com/searches/3e89885fadff0027/658ee5b34d443d436037bf07.json",
+"created_at":
+"2023-12-29 15:28:51 UTC",
+"processed_at":
+"2023-12-29 15:28:51 UTC",
+"google_scholar_author_url":
+"https://scholar.google.com/citations?user=PQa_bmcAAAAJ&hl=en",
+"raw_html_file":
+"https://serpapi.com/searches/3e89885fadff0027/658ee5b34d443d436037bf07.html",
+"total_time_taken":
+1.75
+},
+"search_parameters":
+{
+"engine":
+"google_scholar_author",
+"author_id":
+"PQa_bmcAAAAJ",
+"hl":
+"en"
+},
+"author":
+{
+"name":
+"Roman M Richard",
+"affiliations":
+"Technological Institute of the Philippines",
+"email":
+"Verified email at tip.edu.ph",
+"interests":
+[
+{
+"title":
+"Cyber-Physical Systems",
+"link":
+"https://scholar.google.com/citations?view_op=search_authors&hl=en&mauthors=label:cyber_physical_systems",
+"serpapi_link":
+"https://serpapi.com/search.json?engine=google_scholar_profiles&hl=en&mauthors=label%3Acyber_physical_systems"
+},
+{
+"title":
+"Computer Vision",
+"link":
+"https://scholar.google.com/citations?view_op=search_authors&hl=en&mauthors=label:computer_vision",
+"serpapi_link":
+"https://serpapi.com/search.json?engine=google_scholar_profiles&hl=en&mauthors=label%3Acomputer_vision"
+},
+{
+"title":
+"Machine/Deep Learning",
+"link":
+"https://scholar.google.com/citations?view_op=search_authors&hl=en&mauthors=label:machine_deep_learning",
+"serpapi_link":
+"https://serpapi.com/search.json?engine=google_scholar_profiles&hl=en&mauthors=label%3Amachine_deep_learning"
+}
+],
+"thumbnail":
+"https://scholar.googleusercontent.com/citations?view_op=view_photo&user=PQa_bmcAAAAJ&citpid=2"
+},
+"articles":
+[
+{
+"title":
+"Cyber-Physical System Framework for Cerebrovascular Accidents using Machine Learning Algorithm",
+"link":
+"https://scholar.google.com/citations?view_op=view_citation&hl=en&user=PQa_bmcAAAAJ&citation_for_view=PQa_bmcAAAAJ:u-x6o8ySG0sC",
+"citation_id":
+"PQa_bmcAAAAJ:u-x6o8ySG0sC",
+"authors":
+"RM Richard, JV Taylar",
+"publication":
+"2022 International Conference on ICT for Smart Society (ICISS), 01-08, 2022",
+"cited_by":
+{
+"value":
+1,
+"link":
+"https://scholar.google.com/scholar?oi=bibs&hl=en&cites=10669535256079737115",
+"serpapi_link":
+"https://serpapi.com/search.json?cites=10669535256079737115&engine=google_scholar&hl=en",
+"cites_id":
+"10669535256079737115"
+},
+"year":
+"2022"
+}
+],
+"cited_by":
+{
+"table":
+[
+{
+"citations":
+{
+"all":
+1,
+"since_2018":
+1
+}
+},
+{
+"h_index":
+{
+"all":
+1,
+"since_2018":
+1
+}
+},
+{
+"i10_index":
+{
+"all":
+0,
+"since_2018":
+0
+}
+}
+]
+},
+"co_authors":
+[
+{
+"name":
+"Jonathan V. Taylar",
+"link":
+"https://scholar.google.com/citations?user=nURZKuwAAAAJ&hl=en",
+"serpapi_link":
+"https://serpapi.com/search.json?author_id=nURZKuwAAAAJ&engine=google_scholar_author&hl=en",
+"author_id":
+"nURZKuwAAAAJ",
+"affiliations":
+"Technological Institute of the Philippines",
+"email":
+"Verified email at tip.edu.ph",
+"thumbnail":
+"https://scholar.googleusercontent.com/citations?view_op=small_photo&user=nURZKuwAAAAJ&citpid=2"
+}
+]
+}

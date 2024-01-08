@@ -1,0 +1,81 @@
+body{
+    font-family: 'Arial Narrow';
+    background-color: aquamarine;
+    box-sizing: border-box;
+}
+
+.container{
+    padding: 0px;
+    background-color: azure;
+
+}
+
+input[type=Username]{
+    font-family: 'Arial Narrow';
+    width: 95%;
+    height: 5px;
+    padding: 15px;
+    margin: 5px 0 22px ;
+    display: inline-block;
+    border: none;
+    outline: none;
+    background: whitesmoke;
+    color: black;
+}
+
+input[type=Email]{
+    font-family: 'Arial Narrow';
+    width: 95%;
+    height: 5px;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    outline: none;
+    background: whitesmoke;
+}
+
+input[type=Password]{
+    font-family: 'Arial Narrow';
+    width: 95%;
+    height: 5px;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    outline: none;
+    background: whitesmoke;
+}
+
+input[type=username]:focus,
+input[type=email]:focus,
+input[type=password]:focus{
+    font-family: 'Arial Narrow';
+    background-color: white;
+    outline: none;
+}
+
+::placeholder {
+    color: #000;
+}
+
+.registerbtn{
+    font-family: 'Arial Narrow';
+    background-color: gray;
+    color: black;
+    padding: 15px 10px;
+    margin: 5px;
+    cursor: pointer;
+    opacity: 0.9;
+    width: 10%;
+    border-radius: 0%;
+
+}
+
+.registerbtn:hover{
+    opacity: 1;
+}
+
+a{
+    color: black;
+}

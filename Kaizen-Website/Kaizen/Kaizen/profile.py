@@ -8,5 +8,4 @@ params = {
 }
 
 search = GoogleSearch(params)
-results = search.get_dict()
-profiles = results["profiles"]
+profiles = search.get_hash[:profiles]

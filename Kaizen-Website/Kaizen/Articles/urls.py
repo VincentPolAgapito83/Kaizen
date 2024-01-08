@@ -11,6 +11,6 @@ urlpatterns = [
     path('profile/', views.user_profile, name="profile"),
     path('about/', AboutPageView.as_view(), name="about"),
     path('search/', SearchResultsView.as_view(), name="search_results"),
-    path('search/', views.search_bar, name="search-bar"),
+    path('searchform/', views.search_form, name="search_form"),
     path('', HomePageView.as_view(), name="home"),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
