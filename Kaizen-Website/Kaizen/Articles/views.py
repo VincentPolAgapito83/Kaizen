@@ -8,17 +8,18 @@ from django.views.generic import TemplateView, ListView
 from .models import Articles
 from django.db.models import Q
 
+
+def search_form(request):
+    if request.method == "POST":
+        searched = request.POST('searched')
+
+        return render(request, 'searchform.html', {'searched':searched})
+    else:
+        return render(request, 'searchform.html', {})
+
+
 def user_profile(request):
     return render(request, 'members/profile.html')
-
-
-def search_bar(request):
-    if request.method == "POST":
-        results = request.POST['results']
-        return render(request, 'searchbar.html',
-                       {'results':results}) 
-    else:
-        return render(request, 'searchbar.html', {})
     
 def user_logout(request):
     logout(request)

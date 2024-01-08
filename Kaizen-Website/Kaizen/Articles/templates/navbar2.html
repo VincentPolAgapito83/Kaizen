@@ -29,10 +29,10 @@
             <a class="nav-link" href="{}">About</a>
           </li>
         </ul>
-        <form class="d-flex" method=POST action="{% url 'search-bar' %}">
-            {% csrf_token %}
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="Results">
-          <button class="btn btn-outline-secondary" type="submit">Search</button>
+        <form class="d-flex" method=GET action="{% url 'search_form' %}">
+          {% csrf_token %}
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="Results">
+        <button class="btn btn-outline-light" type="submit">Search</button>
         </form>
       </div>
     </div>
