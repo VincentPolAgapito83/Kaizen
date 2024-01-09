@@ -4,7 +4,8 @@
 {% block content %}
     <center>
     {% if searched %}
-        <h1> You Search For{{ searched}} </h1>
+        <h1> You Search For{{Authors.name}}, {{Authors.email}}, {{Authors.department}}</h1>
+        <li>{{Authors.name}}, {{Authors.email}}, {{Authors.department}}</li>
     {% else %}
         <h1>No Results Found</h1>
     {% endif %}

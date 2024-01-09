@@ -7,7 +7,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.views.generic import TemplateView, ListView
-from .models import Articles
+from .models import Authors
 from django.db.models import Q
 from scholarly import scholarly
 
@@ -29,9 +29,8 @@ def user_profile(request):
     if request.method == "POST":
         results = request.POST['results']
         user_profile = request.POST['profile']
-
         response_data = {'status':'success'}
-        return 
+      
     return render(request, 'members/profile.html')
     
 def user_logout(request):
@@ -74,12 +73,11 @@ class AboutPageView(TemplateView):
     template_name = 'about.html'
 
 class SearchResultsView(ListView):
-    model = Articles
+    model = Authors
     template_name = 'search_results.html'
 
     def get_queryset(self):
-        return Articles.objects.filter(
-            Q(authors__icontains="") | Q(title__icontains="")
-        )
+        return Authors.objects.filter( )
+        
 
 

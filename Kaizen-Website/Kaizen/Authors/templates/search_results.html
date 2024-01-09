@@ -1,0 +1,17 @@
+
+<h1>Search Results</h1>
+
+<ul>
+    {% for Authors in object_list %}
+    <li>
+        {{Authors.name}}, {{Authors.email}}
+        {{Authors.department}}, 
+    </li>
+
+    <li>
+        {{Authors.articles}}
+    </li>
+
+
+    {% endfor %}
+</ul>

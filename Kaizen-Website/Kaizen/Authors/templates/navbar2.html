@@ -26,7 +26,7 @@
             <a class="nav-link" href="{% url 'about' %}">About</a>
           </li>
         </ul>
-        <form class="d-flex" method=GET action="{% url 'search_form' %}">
+        <form class="d-flex" method=GET action="{% url 'search_results' %}">
           {% csrf_token %}
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="Results">
         <button class="btn btn-outline-light" type="submit">Search</button>
