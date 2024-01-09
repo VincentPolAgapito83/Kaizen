@@ -65,6 +65,43 @@ def user_login(request):
     context = {}
     return render(request, 'members/login2.html', context)
 
+def search_results(request):
+
+    if request.method == 'POST':
+      Authors_url = 'https://serpapi.com/search?engine=google_scholar_profiles'
+   
+    search_params = {
+       'Authors' : 'name',
+       'Authors' : 'email',
+       'Authors' : 'department',
+       'Authors' : 'articles',
+       'q' : request.POST['search']
+
+    }
+
+    r = requests.get(Authors_url, params=search_params)
+    results = scholarly.json()
+   
+    if len(results):
+       for result in results:
+           articles_data = {
+           'Title' : result['title'],
+           'Published_date': result['published_date'],
+           'Co-Author' : result['co-author'],
+           'Description' : result['description']
+       }
+
+       Authors.append(Authors_data)  
+
+    else:
+      message = print('No results found')
+
+    context = {
+      'Authors' : Authors
+
+}
+    return render(request, 'search_results.html', context)
+
 
 class HomePageView(TemplateView):
     template_name = 'home.html'
