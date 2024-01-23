@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 style="text-align: center;">Welcome To Kaizen Website</h1>
+<p style="text-align: center;">Login Page</p>
+<form class="site-form" action="{% url 'home' %}" method="get">
+    {% csrf_token %} 
+    {{ form }}
+    <div class="container">
+
+        <label>
+            Username
+        </label>
+        <input type="text" placeholder="Username"/>
+        <br/>
+
+        <label>
+            Password
+        </label>
+        <input type="password" placeholder="Password"/>
+        <br/>
+
+        <input type="checkbox"/>Remember me
+         <label>
+            <p>Forgot <a href="#">Password?</a> </p>
+        </label>
+        <label>
+             <p>No account?<a href="register">signup</a></p>
+            
+        </label> 
+    {% if request.GET.next %}
+    <input type="hideen" name="next" value="{{request.GET.next}}">
+    {% endif %}
+    <input type="submit" value="Login">
+</form>
+{% endblock %}
+
+

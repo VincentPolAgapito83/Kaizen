@@ -1,0 +1,43 @@
+body{
+    font-family: 'Arial Narrow';
+    font-style: bold;
+    margin: 0;
+    background: aquamarine;
+}
+
+.about-page{
+    padding: 40px;
+    text-align: center;
+    background-color: rgb(127, 255, 212);
+    color: rgb(0, 0, 0);
+}
+
+.column {
+    float: left;
+    width: 50%;
+    margin-bottom: 16px;
+    padding: 0 8px;
+}
+
+.container {
+    padding: 0 16px;
+}
+
+.container::after, .row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.title {
+    color: black;
+    font-style: bold;
+}
+
+@media screen and (max-width: 650px) {
+    .column  {
+        width: 100%;
+        display: block;
+    }
+    
+}

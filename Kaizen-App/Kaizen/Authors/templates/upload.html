@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 style="text-align: center;">Welcome To Kaizen Website</h1>
+<p style="text-align: center;">Authors Information Settings</p>
+<form class="site-form" action="{% url 'profile' %}" method="get">
+    {% csrf_token %} 
+    {{ form }}
+    <div class="container">
+        <label>
+           Title
+        </label>
+        <input type="text" placeholder="Title"/>
+        <br/>
+
+        <label>
+           Co-Authors
+        </label>
+        <input type="text" placeholder="Co-Authors"/>
+        <br/>
+
+        <label>
+            School
+        </label>
+        <input type="text" placeholder="School"/>
+        <br/>
+
+        <label>
+            Department
+        </label>
+        <input type="text" placeholder="Department"/>
+        <br/>
+
+        <label for="file">
+            Your Articles
+        </label>
+        <input type="file" placeholder="Choose Files"/>
+        <br/>
+    
+    {% if request.GET.next %}
+    <input type="hideen" name="next" value="{{request.GET.next}}">
+    {% endif %}
+    <input type="submit" value="Save">
+</form>
+{% endblock %}
