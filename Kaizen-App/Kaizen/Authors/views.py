@@ -71,7 +71,7 @@ class Displayprofileview(View):
           "api_key": "5d2bc0b24f17c12c1fda9195a38221181057d1c980d264547a3d99fb90a8c392",
           "engine": "google_scholar_profiles",
           "hl": "en",
-          "mauthors": "Menchie miranda"
+          "mauthors": '"Verlyn Nojor" OR "Menchie Miranda" OR "Jonathan V Taylar"'
         }
 
         search = GoogleSearch(params)
@@ -80,25 +80,6 @@ class Displayprofileview(View):
 
         return render (request, self.template_name, {'profiles': profiles})
     
-    def get(self, request, *args, **kwargs):
-    
-        params = {
-            "api_key": "5d2bc0b24f17c12c1fda9195a38221181057d1c980d264547a3d99fb90a8c392",
-            "engine": "google_scholar_profiles",
-            "hl": "en",
-            "mauthors": "verlyn v nojor"
-        
-        }
-
-        search = GoogleSearch(params)
-        results = search.get_dict()
-        profiles = results["profiles"]
-        return render (request, self.template_name, {'profiles': profiles})
-    
-    
-
-
-
 class informationview(TemplateView):
     template_name = 'information.html'
 
