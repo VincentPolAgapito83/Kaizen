@@ -88,26 +88,20 @@ class uploadview(TemplateView):
     
 class HomePageView(TemplateView):
     template_name = 'home.html'
-
+    
 class AboutPageView(TemplateView):
     template_name = 'about.html'
 
 class SearchResultsView(ListView):
+    model = Authors
     template_name = 'search_results.html'
 
-    def get(self, request, *args, **kwargs):
-        params = {
-        "engine": "google_scholar_profiles",
-        "mauthors": "Mike",
-        "api_key": "e6ad05045a69b9958f00521b1b488ff390d5249bbc3ac61cdb5efa89fbb38b71"
-        }
-
-        search = GoogleSearch(params)
-        results = search.get_dict()
-        profiles = results["profiles"]
-
-        return render (request, self.template_name, {'profiles': profiles})
+    def SearchResultsView(self):
+        return Authors.object.filter()
     
+
+
+
 
 
 

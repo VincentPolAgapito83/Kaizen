@@ -16,8 +16,12 @@
 <ul>
     {% for Authors in object_list %}
     <li class="nav-item">
-        <a class="nav-link" href="{% url 'profile' %}">{{Authors.name}}</a>
-        <p>{{profile}}</p>
+        <a class="nav-link" href="{% url 'profiles' %}">{{Authors.name}}</a>
+        <p>{{Authors.email}}</p>
+        <p>{{Authors.department}}</p>
+        <p>{{Authors.school}}</p>
+      </li>
+    <li>
         
     </li>
     {% endfor %}
