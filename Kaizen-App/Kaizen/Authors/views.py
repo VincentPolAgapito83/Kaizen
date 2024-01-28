@@ -63,7 +63,7 @@ def user_login(request):
         return render(request, 'login.html')
     
 class Displayprofileview(View):
-    template_name = 'members/profile.html'
+    template_name = 'profiles/profile.html'
 
     def get(self, request, *args, **kwargs):
 
@@ -71,7 +71,7 @@ class Displayprofileview(View):
           "api_key": "5d2bc0b24f17c12c1fda9195a38221181057d1c980d264547a3d99fb90a8c392",
           "engine": "google_scholar_profiles",
           "hl": "en",
-          "mauthors": '"Verlyn Nojor" OR "Menchie Miranda" OR "Jonathan V Taylar"'
+          "mauthors": '"Verlyn Nojor" OR "Menchie Miranda"'
         }
 
         search = GoogleSearch(params)
@@ -79,6 +79,101 @@ class Displayprofileview(View):
         profiles = results["profiles"]
 
         return render (request, self.template_name, {'profiles': profiles})
+    
+class Profile(View):
+    template_name = 'profiles/profile2.html'
+
+    def get(self, request, *args, **kwargs):
+
+       
+      params = {
+      "api_key": "5d2bc0b24f17c12c1fda9195a38221181057d1c980d264547a3d99fb90a8c392",
+      "engine": "google_scholar_profiles",
+      "hl": "en",
+      "mauthors": "Jonathan V.Taylar"
+    }
+
+      search = GoogleSearch(params)
+      results = search.get_dict()
+      profile = results["profile"]
+
+
+      return render (request, self.template_name, {'profile': profile})
+    
+class Display(View):
+    template_name = 'profiles/profile3.html'
+
+    def get(self, request, *args, **kwargs):
+
+       params = {
+      "api_key": "5d2bc0b24f17c12c1fda9195a38221181057d1c980d264547a3d99fb90a8c392",
+      "engine": "google_scholar_profiles",
+      "hl": "en",
+      "mauthors": "ryan francisco tip"
+    }
+
+       search = GoogleSearch(params)
+       results = search.get_dict()
+       profile = results["profile"]
+    
+       return render (request, self.template_name, {'profile': profile})
+ 
+class ProfileView(View):
+    template_name = 'profiles/profile4.html'
+
+    def get(self, request, *args, **kwargs):
+
+       
+      params = {
+      "api_key": "5d2bc0b24f17c12c1fda9195a38221181057d1c980d264547a3d99fb90a8c392",
+      "engine": "google_scholar_profiles",
+      "hl": "en",
+      "mauthors": "Roman M. richard"
+    }
+
+      search = GoogleSearch(params)
+      results = search.get_dict()
+      profile = results["profile"]
+    
+      return render (request, self.template_name, {'profile': profile})
+    
+class DisplayView(View):
+    template_name = 'profiles/profile5.html'
+
+    def get(self, request, *args, **kwargs):
+
+       
+      params = {
+     "api_key": "5d2bc0b24f17c12c1fda9195a38221181057d1c980d264547a3d99fb90a8c392",
+     "engine": "google_scholar_profiles",
+     "hl": "en",
+     "mauthors": "alonica villanueva"
+}
+
+      search = GoogleSearch(params)
+      results = search.get_dict()
+      profile = results["profile"]
+    
+      return render (request, self.template_name, {'profile': profile})
+
+class DisplayProfile(View):
+    template_name = 'profiles/profile6.html'
+
+    def get(self, request, *args, **kwargs):
+
+       
+      params = {
+     "api_key": "5d2bc0b24f17c12c1fda9195a38221181057d1c980d264547a3d99fb90a8c392",
+     "engine": "google_scholar_profiles",
+     "hl": "en",
+     "mauthors": "Verlyn Nojor"
+}
+
+      search = GoogleSearch(params)
+      results = search.get_dict()
+      profile = results["profile"]
+    
+      return render (request, self.template_name, {'profile': profile})
     
 class informationview(TemplateView):
     template_name = 'information.html'
