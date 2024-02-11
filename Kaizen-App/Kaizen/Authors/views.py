@@ -63,6 +63,17 @@ def user_login(request):
         form = AuthenticationForm()
         return render(request, 'login.html')
     
+def search_results(request):
+    result = Authors.objects.all()
+    query - request.GET.get("query")
+    if query:
+        result = result.filter(
+            Q(Authors__icontains=query) |
+            Q(title__icontains=query)
+        ).distinct()
+        Authors_filter = AuthorsFilter(request.GET, QuerySet=result)
+        return render(request, "search_results.html", {'filter': Authors_filter})
+    
 class Displayprofileview(View):
     template_name = 'profiles/profile.html'
 
@@ -80,6 +91,8 @@ class Displayprofileview(View):
         profiles = results["profiles"]
 
         return render (request, self.template_name, {'profiles': profiles})
+    
+
 
 class informationview(TemplateView):
     template_name = 'information.html'
