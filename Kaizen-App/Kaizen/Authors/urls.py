@@ -12,7 +12,6 @@ urlpatterns = [
     path('profiles/', Displayprofileview.as_view(), name="profiles"),
     path('about/', AboutPageView.as_view(), name="about"),
     path('search/', SearchResultsView.as_view(), name="search_results"),
-    path('search/', SearchResultsView.as_view(), name="search_results"),
     path('searchform/', views.search_form, name="search_form"),
     path('information/', informationview.as_view(), name="information"),
     path ('upload/', uploadview.as_view(), name="upload"),

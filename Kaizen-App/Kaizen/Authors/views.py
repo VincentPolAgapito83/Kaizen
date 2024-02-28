@@ -12,6 +12,7 @@ from django.views.generic import TemplateView, ListView, View
 from .models import Authors
 from django.contrib.auth.models import User
 from django.db.models import Q
+
  
 def search_form(request):
     if request.method == "POST":
@@ -64,22 +65,6 @@ def user_login(request):
         return render(request, 'login.html')
     
     
-def SearchFilterView(request):
-    qs = Authors.objects.all()
-    Authors_contains_query = request.GET.get('Authors_contains')
-
-    if Authors_contains_query != '' is not None:
-        qs = qs.filter(Authors__icontains=Authors_contains_query)
-
-    elif Authors_contains_query != '' is not None:
-        qs = qs.filter(Q(Authors__icontains=Authors_contains_query)).distinct()
-
-    context = {
-        'queryset': qs
-    }
-
-    return render(request, "search_results.html", context)
-    
 class Displayprofileview(View):
     template_name = 'profiles/profile.html'
 
@@ -111,21 +96,23 @@ class HomePageView(TemplateView):
 class AboutPageView(TemplateView):
     template_name = 'about.html'
 
+
 class SearchResultsView(ListView):
     model = Authors
-    template_name = 'search_results.html'
+    template_name = "search_results.html"
 
-    def SearchResultsView(self):
-        return Authors.object.filter()
+    def search(request):  # new
+        if request.method == 'GET':
+        
+            search_query = request.GET.get('Authors', None)
+            print(search_query)
+            Authors_list_obj = Authors.objects.filter(Authors__icontains=search_query)
+
+            if (len(Authors_list_obj)) > 0:
+                print("Authors Found")
+                return render(request, 'search_results.html', {'Authors_list_obj': Authors_list_obj,})
+            else:
+                print("Authors Not Found")
+              
+        return render(request, 'search_results.html', {})
     
-
-
-
-
-
-
-
-
-
-
-
