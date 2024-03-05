@@ -84,10 +84,10 @@ class Displayprofileview(View):
         return render (request, self.template_name, {'profiles': profiles})
 
 
-class informationview(TemplateView):
+class information(TemplateView):
     template_name = 'information.html'
 
-class uploadview(TemplateView):
+class upload(TemplateView):
     template_name = 'upload.html'
     
 class HomePageView(TemplateView):
@@ -95,7 +95,6 @@ class HomePageView(TemplateView):
     
 class AboutPageView(TemplateView):
     template_name = 'about.html'
-
 
 class SearchResultsView(ListView):
     model = Authors

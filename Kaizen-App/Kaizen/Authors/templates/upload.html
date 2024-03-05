@@ -3,7 +3,7 @@
 {% block content %}
 <h1 style="text-align: center;">Welcome To Kaizen Website</h1>
 <p style="text-align: center;">Authors Information Settings</p>
-<form class="site-form" action="{% url 'profile' %}" method="get">
+<form class="site-form" action="{% url 'profiles' %}" method="get">
     {% csrf_token %} 
     {{ form }}
     <div class="container">
@@ -11,31 +11,31 @@
            Title
         </label>
         <input type="text" placeholder="Title"/>
-        <br/>
+        <br></br>
 
         <label>
            Co-Authors
         </label>
         <input type="text" placeholder="Co-Authors"/>
-        <br/>
+        <br></br>
 
         <label>
             School
         </label>
         <input type="text" placeholder="School"/>
-        <br/>
+        <br></br>
 
         <label>
             Department
         </label>
         <input type="text" placeholder="Department"/>
-        <br/>
+        <br></br>
 
         <label for="file">
-            Your Articles
+            Your Article File/s
         </label>
-        <input type="file" placeholder="Choose Files"/>
-        <br/>
+        <input type="file" placeholder="Choose File/s"/>
+        <br></br>
     
     {% if request.GET.next %}
     <input type="hideen" name="next" value="{{request.GET.next}}">
