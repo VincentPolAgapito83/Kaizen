@@ -3,12 +3,15 @@ from django.contrib.auth.forms import UserCreationForm
 from django import forms
 from django.contrib.auth.models import User
 
-from .models import Order
+from .models import Authors
 
-class OrderForm(ModelForm):
+class AuthorsForm(ModelForm):
     class Meta:
-        model = Order
+        model = Authors
         fields = '__all__'
+
+class SearchForm(forms.Form):
+    person_to_search = forms.CharField(label='Person to Search', max_length=100)
 
 class CreateUserForm(UserCreationForm):
     class Meta:

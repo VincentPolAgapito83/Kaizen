@@ -12,13 +12,16 @@ from django.views.generic import TemplateView, ListView, View
 from .models import Authors
 from django.contrib.auth.models import User
 from django.db.models import Q
+from .filters import AuthorsFilter
+from serpapi import GoogleSearch
+from .forms import SearchForm # Import your search form
 
- 
+
 def search_form(request):
-    if request.method == "POST":
+       if request.method == "POST":
         searched = request.POST('searched')
         return render(request, 'searchform.html', {'searched':searched})
-    else:
+       else:
         return render(request, 'searchform.html', {})
 
 
@@ -96,22 +99,29 @@ class HomePageView(TemplateView):
 class AboutPageView(TemplateView):
     template_name = 'about.html'
 
-class SearchResultsView(ListView):
-    model = Authors
-    template_name = "search_results.html"
+class SearchProfileView(View):
+    template_name = 'profiles/profile.html'
 
-    def search(request):  # new
-        if request.method == 'GET':
-        
-            search_query = request.GET.get('Authors', None)
-            print(search_query)
-            Authors_list_obj = Authors.objects.filter(Authors__icontains=search_query)
+    def get(self, request, *args, **kwargs):
+        form = SearchForm(request.GET)  # Bind request.GET data to the form
+        profiles = []
 
-            if (len(Authors_list_obj)) > 0:
-                print("Authors Found")
-                return render(request, 'search_results.html', {'Authors_list_obj': Authors_list_obj,})
-            else:
-                print("Authors Not Found")
-              
-        return render(request, 'search_results.html', {})
+        if form.is_valid():
+            person_to_search = form.cleaned_data.get('person_to_search')
+            params = {
+                "api_key": "5d2bc0b24f17c12c1fda9195a38221181057d1c980d264547a3d99fb90a8c392",
+                "engine": "google_scholar_profiles",
+                "hl": "en",
+                "mauthors": person_to_search  # Update with the value from the form
+            }
+
+            search = GoogleSearch(params)
+            results = search.get_dict()
+            profiles = results.get("profiles", [])
+
+        return render(request, self.template_name, {'profiles': profiles, 'form': form})
     
+              
+           
+
+
