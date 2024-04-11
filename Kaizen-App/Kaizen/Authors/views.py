@@ -95,12 +95,33 @@ class upload(TemplateView):
     
 class HomePageView(TemplateView):
     template_name = 'home.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        form = SearchForm(self.request.GET or None)  # Initialize the form with GET data if present
+
+        profiles = []
+        if self.request.method == 'GET' and form.is_valid():
+            person_to_search = form.cleaned_data.get('person_to_search')
+            params = {
+                "api_key": "5d2bc0b24f17c12c1fda9195a38221181057d1c980d264547a3d99fb90a8c392",
+                "engine": "google_scholar_profiles",
+                "hl": "en",
+                "mauthors": person_to_search,
+            }
+            search = GoogleSearch(params)
+            results = search.get_dict()
+            profiles = results.get("profiles", [])
+
+        context['form'] = form
+        context['profiles'] = profiles
+        return context
     
 class AboutPageView(TemplateView):
     template_name = 'about.html'
 
 class SearchProfileView(View):
-    template_name = 'profiles/profile.html'
+    template_name = 'search_profile.html'
 
     def get(self, request, *args, **kwargs):
         form = SearchForm(request.GET)  # Bind request.GET data to the form
