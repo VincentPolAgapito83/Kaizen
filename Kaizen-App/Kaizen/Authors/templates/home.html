@@ -10,26 +10,27 @@
         <p style="text-align: center;">This Website Helps You To Find
     Your Recommended Article & Especially Your Recommended Author/s.</p>
 
-    <div class="form-container">
-        <div class="container">
-            <form class="form-inline" method="get">
-                {% for field in form %}
-                    <div class="form-group mx-sm-3 mb-2">
-                        <label for="{{ field.id_for_label }}" class="sr-only">{{ field.label }}</label>
-                        <input type="{{ field.field.widget.input_type }}" class="form-control" id="{{ field.id_for_label }}" name="{{ field.name }}" placeholder="{{ field.label }}">
-                    </div>
-                {% endfor %}
-                <button type="submit" class="btn btn-primary mb-2">Search</button>
-            </form>
-        </div>
-        
+
+    <div class="container">
+        <form class="form-inline" method="get">
+            {% for field in form %}
+                <div class="form-group mx-sm-3 mb-2">
+                    <label for="{{ field.id_for_label }}" class="sr-only">{{ field.label }}</label>
+                    <input type="{{ field.field.widget.input_type }}" class="form-control" id="{{ field.id_for_label }}" name="{{ field.name }}" placeholder="{{ field.label }}">
+                </div>
+            {% endfor %}
+            <button type="submit" class="btn btn-primary mb-2">Search</button>
+        </form>
+    </div>
+    
+
         <meta name="viewport" content="width=device-width", initial-scale="2.0">
         <link rel="stylesheet" href="static/home.css">
         <title>Kaizen-App</title>
         </form>
     </head>
 <body>
-   
+
     </div>
 
 {% if profiles %}
@@ -45,13 +46,14 @@
                 <p class="card-text">Cited By: {{profile.cited_by}}</p>
             </div>
             <div class="card-footer">
-                <a href="{{profile.link}}" class="btn btn-primary" target="_blank">Profile Link</a>
+                <a href="{{profile.link}}" class="btn btn-primary" target="_blank">Google Scholar Link</a>
+                <a href="{% url 'profile'  author_id=profile.author_id %}" method="get" class="btn btn-primary" target="_blank">Click Profile</a>
             </div>
         </div>
     </div>
-    
+
     </div>
-        
+
     {% endfor %}
     </ul>
 {% endif %}

@@ -3,19 +3,18 @@ from django.http import HttpRequest, HttpResponse
 from django.shortcuts import render
 import json
 from serpapi import GoogleSearch
+from .forms import UserProfileForm
 from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.views.generic import TemplateView, ListView, View
-from .models import Authors
+from .models import UserProfile
 from django.contrib.auth.models import User
 from django.db.models import Q
-from .filters import AuthorsFilter
 from serpapi import GoogleSearch
 from .forms import SearchForm # Import your search form
-
 
 def search_form(request):
        if request.method == "POST":
@@ -24,15 +23,6 @@ def search_form(request):
        else:
         return render(request, 'searchform.html', {})
 
-
-def user_profile(request):
-    
-    if request.method == "POST":
-        results = request.POST['results']
-        user_profile = request.POST['profile']
-        response_data = {'status':'success'}
-      
-    return render(request, 'members/profile.html')
     
 def user_logout(request):
     logout(request)
@@ -40,17 +30,20 @@ def user_logout(request):
     return redirect('login')
 
 def user_registration(request):
-    form = UserCreationForm()
-
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
         if form.is_valid():
             form.save()
             user = form.cleaned_data.get('email')
             messages.success(request, 'Account Created Successfully')
+            return redirect('home.html')
+
+        else:
+            form = UserProfileForm()
             
     context = {'form':form}
     return render(request, 'members/registration2.html', context)
+
 
 def user_login(request):
     
@@ -68,30 +61,27 @@ def user_login(request):
         return render(request, 'login.html')
     
     
-class Displayprofileview(View):
-    template_name = 'profiles/profile.html'
+class userprofile(View):
 
-    def get(self, request, *args, **kwargs):
+    template_name = 'profile/profile.html'
+
+    def get(self, request, author_id):
 
         params = {
-          "api_key": "5d2bc0b24f17c12c1fda9195a38221181057d1c980d264547a3d99fb90a8c392",
-          "engine": "google_scholar_profiles",
+          "api_key": "425d6fb5ad378e6887055b328dad42d7ff166d2476aaefd7b2c6a814312ed22f",
+          "author_id": author_id,
+          "engine": "google_scholar_author",
           "hl": "en",
-          "mauthors": '"Verlyn Nojor" OR "Menchie Miranda"'
+        
         }
 
-        search = GoogleSearch(params)
+        search = GoogleSearch(params) # Assuming GoogleSearch is your model to interact with the API
         results = search.get_dict()
-        profiles = results["profiles"]
+        author = results.get("author", {})
+        articles = results.get("articles", [{}])
+        
+        return render (request, self.template_name, {'author': author, 'articles': articles})
 
-        return render (request, self.template_name, {'profiles': profiles})
-
-
-class information(TemplateView):
-    template_name = 'information.html'
-
-class upload(TemplateView):
-    template_name = 'upload.html'
     
 class HomePageView(TemplateView):
     template_name = 'home.html'
@@ -104,7 +94,7 @@ class HomePageView(TemplateView):
         if self.request.method == 'GET' and form.is_valid():
             person_to_search = form.cleaned_data.get('person_to_search')
             params = {
-                "api_key": "5d2bc0b24f17c12c1fda9195a38221181057d1c980d264547a3d99fb90a8c392",
+                "api_key": "425d6fb5ad378e6887055b328dad42d7ff166d2476aaefd7b2c6a814312ed22f",
                 "engine": "google_scholar_profiles",
                 "hl": "en",
                 "mauthors": person_to_search,
