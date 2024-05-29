@@ -2,40 +2,53 @@
 
 {%load crispy_forms_tags %} 
 
+<!DOCTYPE html>
+
 {% block content %}
-<h1 style="text-align: center;">Welcome To Kaizen Website</h1>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <h1 style="text-align: center;">Welcome To Kaizen Website</h1>
 <p style="text-align: center;">Login Page</p>
-<form class="site-form" action="{% url 'home' %}" method="get">
-    {% csrf_token %} 
-    {{ form }}
-    <div class="container">
 
-        <label>
-            Username
-        </label>
-        <input type="text" placeholder="Username"/>
-        <br></br>
+<div class="content-section">
+    <form class="modal-content" method="post">
+    {% csrf_token %}
+      <fieldset class="form-group">
+        <legend class="border-bottom mb-4">
+        <div class="container">
+  
+          <!-- Username field -->
+          <label for="id_login">Username or email</label>
+          <input id="id_login" name="login" type="email" class="form-control">
+  
+          <!-- Password field -->
+          <label for="id_password">Password</label>
+          <input id="id_password" name="password" type="password" class="form-control">
+  
+        </legend>
+      </fieldset>
 
-        <label>
-            Password
-        </label>
-        <input type="password" placeholder="Password"/>
-        <br></br>
+      <meta name="viewport" content="width=device-width", initial-scale="2.0">
+        <link rel="stylesheet" href="static/login.css">
 
-        <input type="checkbox"/>Remember me
-         <label>
-            <p>Forgot <a href="#">Password?</a> </p>
-        </label>
-        <br></br>
-        <label>
-             <p>No account?<a href="register">signup</a></p>
-            
-        </label> 
-    {% if request.GET.next %}
-    <input type="hideen" name="next" value="{{request.GET.next}}">
-    {% endif %}
-    <input type="submit" value="Login">
-</form>
+      <div class="form-group">
+        <div class="container" style="background-color:#f1f1f1"></div>
+        <button type="submit" class="btn btn-outline-info">Login</button>
+        
+      </div>
+    </form>
+    <div class="border-top pt-2">
+      <small class="text-muted">Don't have an account? 
+        <a class="ml-2" href="{% url 'register' %}">register</a> 
+      </small>
+    </div>
+  </div>
+
+        
+</head>
+</html>
+
+
+
 {% endblock %}
-
-

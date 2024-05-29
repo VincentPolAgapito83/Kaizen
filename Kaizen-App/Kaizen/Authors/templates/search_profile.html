@@ -31,6 +31,7 @@
             </div>
             <div class="card-footer">
                 <a href="{{profile.link}}" class="btn btn-primary" target="_blank">Profile Link</a>
+                <a href="{% url 'profile'  author_id=profile.author_id %}" method="get" class="btn btn-primary" target="_blank">Click Profile</a>
             </div>
         </div>
     </div>

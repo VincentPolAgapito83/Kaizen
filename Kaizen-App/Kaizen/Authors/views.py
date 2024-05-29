@@ -10,8 +10,8 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.views.generic import TemplateView, ListView, View
-from .models import UserProfile
 from django.contrib.auth.models import User
+from .models import UserProfile
 from django.db.models import Q
 from serpapi import GoogleSearch
 from .forms import SearchForm # Import your search form
@@ -60,12 +60,10 @@ def user_login(request):
         form = AuthenticationForm()
         return render(request, 'login.html')
     
-    
 class userprofile(View):
+  template_name = 'profile/profile.html'
 
-    template_name = 'profile/profile.html'
-
-    def get(self, request, author_id):
+  def get(self, request, author_id):
 
         params = {
           "api_key": "425d6fb5ad378e6887055b328dad42d7ff166d2476aaefd7b2c6a814312ed22f",
@@ -81,7 +79,6 @@ class userprofile(View):
         articles = results.get("articles", [{}])
         
         return render (request, self.template_name, {'author': author, 'articles': articles})
-
     
 class HomePageView(TemplateView):
     template_name = 'home.html'
@@ -106,7 +103,7 @@ class HomePageView(TemplateView):
         context['form'] = form
         context['profiles'] = profiles
         return context
-    
+
 class AboutPageView(TemplateView):
     template_name = 'about.html'
 

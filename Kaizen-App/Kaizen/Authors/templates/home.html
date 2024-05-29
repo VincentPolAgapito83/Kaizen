@@ -46,13 +46,14 @@
                 <p class="card-text">Cited By: {{profile.cited_by}}</p>
             </div>
             <div class="card-footer">
-                <a href="{{profile.link}}" class="btn btn-primary" target="_blank">Google Scholar Link</a>
+                <a href="{{profile.link}}" class="btn btn-primary" target="_blank">Profile Link</a>
                 <a href="{% url 'profile'  author_id=profile.author_id %}" method="get" class="btn btn-primary" target="_blank">Click Profile</a>
             </div>
         </div>
     </div>
-
+    
     </div>
+        
 
     {% endfor %}
     </ul>

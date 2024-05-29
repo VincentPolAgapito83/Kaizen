@@ -44,15 +44,13 @@
       <p>All time: {{ author.cited_by.table.0.citations.all }}</p>
       <p>Since 2016: {{ author.cited_by.table.0.citations.depuis_2016 }}</p>
       
-      <h3>Public Access:</h3>
-      <p><a href="{{ author.public_access.link }}" target="_blank">Public Access Link</a></p>
       
       <h3>Co-Authors:</h3>
       <ul>
           {% for coauthor in author.co_authors %}
               <li>
                   <a href="{{ coauthor.link }}" target="_blank">{{ coauthor.name }}</a>,
-                  {{ coauthor.affiliations }}
+                  <a href="{{ coauthor.affiliations }}" target="_blank">{{ coauthor.affiliations }}</a>
               </li>
           {% endfor %}
       </ul>   <!-- Example row of columns -->
