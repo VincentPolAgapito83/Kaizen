@@ -37,12 +37,11 @@ def user_registration(request):
             user = form.cleaned_data.get('email')
             messages.success(request, 'Account Created Successfully')
             return redirect('home.html')
-
         else:
             form = UserProfileForm()
-            
-    context = {'form':form}
-    return render(request, 'members/registration2.html', context)
+
+
+    return render(request, 'register.html')
 
 
 def user_login(request):
