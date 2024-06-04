@@ -16,6 +16,41 @@ from django.db.models import Q
 from serpapi import GoogleSearch
 from .forms import SearchForm # Import your search form
 
+def index(request):
+    User=UserProfile.objects.all()
+    return render(request,'index.html',{'user': User})
+
+def add(request):
+    return render(request,'add.html')
+
+def addrec(request):
+    x=request.POST['first']
+    y=request.POST['last']
+    z=request.POST['email']
+    User=UserProfile(firstname=x,lastname=y,email=z)
+    User.save()
+    return redirect("/")
+
+def delete(request,id):
+    User=User.objects.get(id=id)
+    User.delete()
+    return redirect("/")
+
+def update(request,id):
+    User=User.objects.get(id=id)
+    return render(request,'update.html',{'User':User})
+
+def uprec(request,id):
+    x=request.POST['first']
+    y=request.POST['last']
+    z=request.POST['email']
+    User=User.objects.get(id=id)
+    User.firstname=x
+    User.lastname=y
+    User.country=z
+    User.save()
+    return redirect("/")
+
 def search_form(request):
        if request.method == "POST":
         searched = request.POST('searched')
