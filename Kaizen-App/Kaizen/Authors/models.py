@@ -2,12 +2,12 @@ from django.db import models
 from django.contrib.auth.models import User
 
 
-class UserProfile(models.Model):
-    first_name = models.CharField(max_length=200, null=True)
-    last_name = models.CharField(max_length=200, null=True)
-    email = models.EmailField(max_length=200, null=True)
+class Article(models.Model):
+    title = models.CharField(max_length=200)
+    authors = models.CharField(max_length=200)
+    publication_date = models.DateField()
+    publisher = models.CharField(max_length=200)
+    uploaded_file = models.FileField(upload_to='uploads/')
 
-    def __str__(self) -> str:
-        return super().__str__()
-
-      
+    def __str__(self):
+        return self.title()

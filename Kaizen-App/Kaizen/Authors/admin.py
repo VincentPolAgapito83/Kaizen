@@ -1,12 +1,10 @@
 from django.contrib import admin
-from .models import UserProfile
+from .models import Article
 
+admin.register(Article)
+class ArticleAdmin(admin.ModelAdmin):
+    list_display = ('title', 'authors', 'publication_date', 'publisher')
 
-class UserProfile(admin.ModelAdmin):
-    list_display = ("first_name", "last_name", "email")
-
-
-admin.site.register(UserProfile)
 
 
 

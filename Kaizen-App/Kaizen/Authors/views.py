@@ -1,9 +1,9 @@
 from django.db.models.query import QuerySet
-from django.http import HttpRequest, HttpResponse
-from django.shortcuts import render
+from django.http import HttpRequest, HttpResponse, HttpResponseRedirect
+from django.shortcuts import render, get_object_or_404
 import json
 from serpapi import GoogleSearch
-from .forms import UserProfileForm
+from .forms import Article
 from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
@@ -11,45 +11,11 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.views.generic import TemplateView, ListView, View
 from django.contrib.auth.models import User
-from .models import UserProfile
+from .models import Article
 from django.db.models import Q
 from serpapi import GoogleSearch
-from .forms import SearchForm # Import your search form
-
-def index(request):
-    User=UserProfile.objects.all()
-    return render(request,'index.html',{'user': User})
-
-def add(request):
-    return render(request,'add.html')
-
-def addrec(request):
-    x=request.POST['first']
-    y=request.POST['last']
-    z=request.POST['email']
-    User=UserProfile(firstname=x,lastname=y,email=z)
-    User.save()
-    return redirect("/")
-
-def delete(request,id):
-    User=User.objects.get(id=id)
-    User.delete()
-    return redirect("/")
-
-def update(request,id):
-    User=User.objects.get(id=id)
-    return render(request,'update.html',{'User':User})
-
-def uprec(request,id):
-    x=request.POST['first']
-    y=request.POST['last']
-    z=request.POST['email']
-    User=User.objects.get(id=id)
-    User.firstname=x
-    User.lastname=y
-    User.country=z
-    User.save()
-    return redirect("/")
+from .forms import ArticleForm, SearchForm# Import your search form
+from Authors.forms import ArticleForm
 
 def search_form(request):
        if request.method == "POST":
@@ -57,8 +23,72 @@ def search_form(request):
         return render(request, 'searchform.html', {'searched':searched})
        else:
         return render(request, 'searchform.html', {})
+       
+def create_view(request):
+
+    context ={}
+    form = ArticleForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+    context['form']= form
+    return render(request, "create_view.html", context)
+
+def list_view(request):
+
+    context ={}
+ 
+    context["dataset"] = Article.objects.all()
+         
+    return render(request, "list_view.html", context)
+
+def delete_view(request, id):
+   
+    context ={}
+ 
+    # fetch the object related to passed id
+    obj = get_object_or_404(Article, id = id)
+ 
+ 
+    if request.method =="POST":
+        # delete object
+        obj.delete()
+        # after deleting redirect to 
+        # home page
+        return HttpResponseRedirect("home")
+ 
+    return render(request, "delete_view.html", context)
 
     
+def detail_view(request, id):
+   
+    context ={}
+  
+    
+    context["data"] = Article.objects.get(id = id)
+          
+    return render(request, "detail_view.html", context)
+ 
+
+def update_view(request, id):
+    
+    context ={}
+ 
+
+    obj = get_object_or_404(Article, id = id)
+ 
+    
+    form = ArticleForm(request.POST or None, instance = obj)
+ 
+   
+    if form.is_valid():
+        form.save()
+        return HttpResponse("/"+id)
+ 
+    # add form dictionary to context
+    context["form"] = form
+ 
+    return render(request, "function/update_view.html", context)
+
 def user_logout(request):
     logout(request)
     messages.success(request, ("Logout Successfully"))
@@ -73,9 +103,7 @@ def user_registration(request):
             messages.success(request, 'Account Created Successfully')
             return redirect('home.html')
         else:
-            form = UserProfileForm()
-
-
+            form = ArticleForm()
     return render(request, 'register.html')
 
 
